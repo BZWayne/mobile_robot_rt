@@ -89,5 +89,18 @@ for m in markers:
 
 [sr-api]: https://studentrobotics.org/docs/programming/sr/
 
-### The detailed explanation of the code:
+### Problem description:
+
+The robot is the same one that you have used in the previous exercises (exercise1.py, exercise2.py, exercise3.py). 
+
+The only difference is that now the sensors
+can detect boxes around all directions (from -180.0 degrees to 180.0 degrees).
+Write a python script for achieving this robot’s behaviour:
+- constrantly drive the robot around the circuit in the counter-clockwise direction
+- avoid touching the golden boxes
+- when the robot is close to a silver box, it should grab it, and move it behind itself
+
+### Solution:
+
+
 
