@@ -187,3 +187,51 @@ def rotate():
         turn(-25, 0.1)
         return True
 ```
+
+### RUNNING THE PROGRAM 
+
+To detect any obstacles or silver boxes, from the BOX function, we receive `True` or `False` returns. If the box is True, then it means wheather the golden box is closer than silver box or nothing is detected in front of the robot. If nothing is detected, then robot moves straight with a constant speed, otherwise, it will use ROTATE function to avoid collisions.
+
+```
+    if box is True:
+        # If there is any obstacles, and the distance is less than 1
+        if (dist_gold!=-1 and dist_gold < 1.0):
+            print("Avoid obstacles")
+            rotate()    
+        # If nothing from both sides        
+        else:
+            print("Drive straight")
+            drive(60,0.2)
+ ```
+ However, if the silver box is closer to the robot, then depending where the box is located, the robot will move towards the box. Depending on the `a_th` global parameters, it will turn its wheels or move straight.
+ 
+ ```
+    # If the silver box is detected
+    elif (box is False):
+
+        # Turning to the direction of silver box
+        if angle_silver < -a_th:
+            print ("Rotate left")
+            turn(-15, 0.1)
+                            
+        elif angle_silver > a_th:
+            print ("Rotate right")
+            turn(+15, 0.1)
+            
+        elif (-a_th < angle_silver <a_th):
+            print ("Move straight to catch it")
+            drive(50, 0.15)
+ ```
+ 
+ Here is the example of how the robot will pick up the box. If the robot is exceeds `d_th`, then it is close to the silver box to grab it, turn around, release behind itself and turn back. For this case, `R.grab()` function is used to catch the box. 
+ 
+ ```       
+        if dist_silver < d_th:
+            print ("Grab a silver box")
+            R.grab()
+            turn(25,2.5)
+            # drive(25,1)
+            R.release()
+            drive(-25,1)
+            turn(-25,2.5)
+  ```
