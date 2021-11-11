@@ -25,31 +25,7 @@ Open a terminal, git clone the task and run the following commands:
 $ python run.py assignment.py
 ```
 
-Robot API
----------
-
-The API for controlling a simulated robot is designed to be as similar as possible to the [SR API][sr-api].
-
-### Vision ###
-
-To help the robot find tokens and navigate, each token has markers stuck to it, as does each wall. The `R.see` method returns a list of all the markers the robot can see, as `Marker` objects. The robot can only see markers which it is facing towards.
-
-Each `Marker` object has the following attributes:
-
-* `info`: a `MarkerInfo` object describing the marker itself. Has the following attributes:
-  * `code`: the numeric code of the marker.
-  * `marker_type`: the type of object the marker is attached to (either `MARKER_TOKEN_GOLD`, `MARKER_TOKEN_SILVER` or `MARKER_ARENA`).
-  * `offset`: offset of the numeric code of the marker from the lowest numbered marker of its type. For example, token number 3 has the code 43, but offset 3.
-  * `size`: the size that the marker would be in the real game, for compatibility with the SR API.
-* `centre`: the location of the marker in polar coordinates, as a `PolarCoord` object. Has the following attributes:
-  * `length`: the distance from the centre of the robot to the object (in metres).
-  * `rot_y`: rotation about the Y axis in degrees.
-* `dist`: an alias for `centre.length`
-* `res`: the value of the `res` parameter of `R.see`, for compatibility with the SR API.
-* `rot_y`: an alias for `centre.rot_y`
-* `timestamp`: the time at which the marker was seen (when `R.see` was called).
-
-### Problem description: ###
+## Problem description: 
 
 The robot is the same one that you have used in the previous exercises (exercise1.py, exercise2.py, exercise3.py). 
 
@@ -60,9 +36,9 @@ Write a python script for achieving this robot’s behaviour:
 - avoid touching the golden boxes
 - when the robot is close to a silver box, it should grab it, and move it behind itself
 
-### Solution: ###
+## Solution: 
 
-##### Initial parameters
+### Initial parameters
 
 This global variables are used to provide fixed values for the thresholds.
 
@@ -74,7 +50,7 @@ This global variables are used to provide fixed values for the thresholds.
 - `search_g` is the angle from -45 to 45 degrees to detect golden boxes.
 - `angle_s` is the threshold of the angle to estimate if the silver or golden boxes are close to the robot.
 
-##### DRIVE function
+### DRIVE function
 
 The simulated robot has two motors configured for skid steering, connected to a two-output [Motor Board](https://studentrobotics.org/docs/kit/motor_board). The left motor is connected to output `0` and the right motor to output `1`.
 
@@ -93,7 +69,7 @@ def drive(speed, seconds):
     R.motors[0].m1.power = 0
 ```
 
-##### TURN function
+### TURN function
 
 Function for setting an angular velocity
 
@@ -107,7 +83,7 @@ def turn(speed, seconds):
     R.motors[0].m1.power = 0
 ```
 
-##### FIND_SILVER_TOKEN function
+### FIND_SILVER_TOKEN function
 This function to find the closest silver token
 
 Returns:
@@ -126,7 +102,7 @@ def find_silver_token():
     else:
         return dist, rot_y
 ```
-##### FIND_GOLDEN_TOKEN function
+### FIND_GOLDEN_TOKEN function
 This function to find the closest golden token
 
 Returns:
@@ -145,7 +121,7 @@ def find_golden_token():
         return dist, rot_y
 ```
 
-##### BOXES function
+### BOXES function
 
 This function is used to find the walls (golden boxes) and search for the silver boxes. 
 
@@ -173,7 +149,7 @@ def boxes(distance, angle):
             return True
 ```
 
-##### ROTATE function
+### ROTATE function
 
 This function is used to rotate the wheel in case of finding the golden obstacles to avoid the collision. It is estimated by using the distance to the golden box with `dist_rot` global variable. The angles of avoidance with the wall is from `-diff_left` and `diff_left` from the left side and `-diff_right` and `diff_right` fro the right side.
  
