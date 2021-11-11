@@ -38,6 +38,10 @@ Write a python script for achieving this robot’s behaviour:
 
 ## Solution: 
 
+### Flowchart
+
+
+
 ### Initial parameters
 
 This global variables are used to provide fixed values for the thresholds.
