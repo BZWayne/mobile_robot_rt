@@ -104,6 +104,32 @@ Write a python script for achieving this robot’s behaviour:
 
 #### Functions used to solve the task
 
+##### Initial parameters
+
+This global variables are used to provide fixed values for the thresholds.
+
+- `d_th` is the threshold of the distance to grab the silver box
+- `a_th` is the threshold of the angle to move toward the silver box
+- `dist_detect` is the threshold the distance to detect boxes
+- `dist_rot` is the threshold of the rotate() function to avoid collisions
+- `search_s` is the angle from -70 to 70 degrees to detect silver boxes. Also used to avoid previous grabbed silver boxes
+- `search_g` is the angle from -45 to 45 degrees to detect golden boxes.
+- `angle_s` is the threshold of the angle to estimate if the silver or golden boxes are close to the robot.
+
+```python
+d_th = 0.4
+a_th = 2
+dist_detect = 1.5                # a distance to detect silver or gold 
+dist_rot = 100                   # a distance to detect the boxes in rotation
+
+## Distances used to find obstacles, silver boxes
+diff = 20
+mid_point = 90
+search_s = 70
+search_g = 45
+angle_s = 30 
+```
+
 ##### BOXES function
 
 This function is used to find the walls (golden boxes) and search for the silver boxes. 
