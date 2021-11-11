@@ -130,11 +130,69 @@ search_g = 45
 angle_s = 30 
 ```
 
+##### DRIVE function
+
+Function for setting a linear velocity with provided speed and time.
+
+Arguments: speed (int): the speed of the wheels seconds (int): the time interval
+
+```
+def drive(speed, seconds):
+    R.motors[0].m0.power = speed
+    R.motors[0].m1.power = speed
+    time.sleep(seconds)
+    R.motors[0].m0.power = 0
+    R.motors[0].m1.power = 0
+```
+
+##### TURN function
+
+Function for setting an angular velocity
+
+Arguments: speed (int): the speed of the wheels seconds (int): the time interval
+```
+def turn(speed, seconds):
+    R.motors[0].m0.power = speed
+    R.motors[0].m1.power = -speed
+    time.sleep(seconds)
+    R.motors[0].m0.power = 0
+    R.motors[0].m1.power = 0
+```
+
+##### FIND_SILVER_TOKEN function
+
+```
+def find_silver_token():
+    dist = dist_detect
+    for token in R.see():
+        if -search_s<token.rot_y<search_s and token.dist < dist and token.info.marker_type is MARKER_TOKEN_SILVER:
+            dist=token.dist
+            rot_y=token.rot_y
+    if dist == dist_detect:
+        return -1, -1
+    else:
+        return dist, rot_y
+```
+##### FIND_GOLDEN_TOKEN function
+
+```
+def find_golden_token():
+    dist = dist_detect
+    for token in R.see():
+        if -search_g<token.rot_y<search_g and token.dist < dist and token.info.marker_type is MARKER_TOKEN_GOLD:
+            dist=token.dist
+            rot_y=token.rot_y
+    if dist == dist_detect:
+        return -1, -1
+    else:
+        return dist, rot_y
+```
+
 ##### BOXES function
 
 This function is used to find the walls (golden boxes) and search for the silver boxes. 
 
-The arguments are:
+Arguments:
 - distance (float): distance of the closest wall (if the distance is -1 and less or equal than 1.5)
 - angle (float): angle between the robot and the token (-1 if no token is detected)
 
@@ -156,4 +214,25 @@ def boxes(distance, angle):
             return False
         elif (distance > dist):
             return True
+```
+
+##### ROTATE function
+
+
+```
+def rotate():
+    dist = dist_rot
+    # Detecting any obstacles from the sides to avoid it by rotating 
+    for token in R.see():
+        if (-diff_left<token.rot_y<-diff_right or diff_right<token.rot_y<diff_left) and token.dist < dist and token.info.marker_type is MARKER_TOKEN_GOLD:
+            dist = token.dist
+            rot_y = token.rot_y
+    # Turning right with a speed of 25 in 0.1 sec
+    if rot_y < 0:
+        turn(25, 0.1)
+        return False
+    # Turning left with a speed of 25 in 0.1 sec
+    else:
+        turn(-25, 0.1)
+        return True
 ```
