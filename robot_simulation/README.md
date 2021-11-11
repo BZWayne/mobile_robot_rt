@@ -40,7 +40,7 @@ Write a python script for achieving this robot’s behaviour:
 
 ### Flowchart
 
-
+![alt text](https://github.com/BZWayne/rt_exercises/blob/main/robot_simulation/flowchart.png)
 
 ### Initial parameters
 
@@ -53,6 +53,7 @@ This global variables are used to provide fixed values for the thresholds.
 - `search_s` is the angle from -70 to 70 degrees to detect silver boxes. Also used to avoid previous grabbed silver boxes
 - `search_g` is the angle from -45 to 45 degrees to detect golden boxes.
 - `angle_s` is the threshold of the angle to estimate if the silver or golden boxes are close to the robot.
+- `diff_left` and `diff_right` is the threshold used to avoid the collisions from the sides of the robot
 
 ### DRIVE function
 
@@ -178,4 +179,3 @@ def rotate():
         turn(-25, 0.1)
         return True
 ```
-
