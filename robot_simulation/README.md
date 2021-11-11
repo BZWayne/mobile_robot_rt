@@ -1,7 +1,8 @@
 Python Robotics Simulator Assignment
 ================================
 
-### Results
+Results
+----------------------
 My solution of the task is represented in my YouTube channel: https://youtu.be/UXKGQzI_MYQ
 
 Below, there is an explanation of how to run a code, problem and solution descriptions.
@@ -30,7 +31,8 @@ Open a terminal, git clone the task and run the following commands:
 $ python run.py assignment.py
 ```
 
-## Problem description: 
+## Problem description:
+----------------------
 
 The robot is the same one that you have used in the previous exercises (exercise1.py, exercise2.py, exercise3.py). 
 
@@ -41,7 +43,8 @@ Write a python script for achieving this robot’s behaviour:
 - avoid touching the golden boxes
 - when the robot is close to a silver box, it should grab it, and move it behind itself
 
-## Solution: 
+## Solution:
+----------------------
 
 ### Flowchart
 
