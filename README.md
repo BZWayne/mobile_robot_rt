@@ -1,3 +1,7 @@
 # Here are the exercises of RT
-## Professor: [Carmine Tommaso Recchiuto](https://github.com/CarmineD8)
-The first task is in robot_sim folder. The video result are uploaded to the YouTube channel: https://youtu.be/UXKGQzI_MYQ
+## About this course
+This course is oriented to learn Robotics Tools such as Python, C++, ROS/ROS2. 
+Professor: [Carmine Tommaso Recchiuto](https://github.com/CarmineD8)
+As every course, it considers midterm assignments:
+The first task is in /robot_sim folder. The detailed explaination of this task is in that folder. 
+The video result of the first assignment is uploaded to my YouTube channel: https://youtu.be/UXKGQzI_MYQ
