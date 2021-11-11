@@ -6,7 +6,7 @@ Professor: [Carmine Tommaso Recchiuto](https://github.com/CarmineD8)
 This course is oriented to learn Robotics Tools such as Python, C++, ROS/ROS2. As every course, it considers midterm assignments:
 
 ### Assignment 1: Python Robotics Simulation
-The first task is in /robot_simulation folder. This is a simple, portable robot simulator developed by Student Robotics. Some of the arenas and the exercises have been modified for the Research Track I course. The detailed explaination of this task is in that folder. 
+The first task is in `/robot_simulation folder` This is a simple, portable robot simulator developed by Student Robotics. Some of the arenas and the exercises have been modified for the Research Track I course. The detailed explaination of this task is in that folder. 
 
 #### Problem
 The robot is the same one that you have used in the previous exercises (exercise1.py, exercise2.py, exercise3.py). 
