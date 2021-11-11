@@ -30,31 +30,6 @@ Robot API
 
 The API for controlling a simulated robot is designed to be as similar as possible to the [SR API][sr-api].
 
-### Motors ###
-
-The simulated robot has two motors configured for skid steering, connected to a two-output [Motor Board](https://studentrobotics.org/docs/kit/motor_board). The left motor is connected to output `0` and the right motor to output `1`.
-
-The Motor Board API is identical to [that of the SR API](https://studentrobotics.org/docs/programming/sr/motors/), except that motor boards cannot be addressed by serial number. So, to turn on the spot at one quarter of full power, one might write the following:
-
-```python
-R.motors[0].m0.power = 25
-R.motors[0].m1.power = -25
-```
-
-### The Grabber ###
-
-The robot is equipped with a grabber, capable of picking up a token which is in front of the robot and within 0.4 metres of the robot's centre. To pick up a token, call the `R.grab` method:
-
-```python
-success = R.grab()
-```
-
-The `R.grab` function returns `True` if a token was successfully picked up, or `False` otherwise. If the robot is already holding a token, it will throw an `AlreadyHoldingSomethingException`.
-
-To drop the token, call the `R.release` method.
-
-Cable-tie flails are not implemented.
-
 ### Vision ###
 
 To help the robot find tokens and navigate, each token has markers stuck to it, as does each wall. The `R.see` method returns a list of all the markers the robot can see, as `Marker` objects. The robot can only see markers which it is facing towards.
@@ -74,22 +49,7 @@ Each `Marker` object has the following attributes:
 * `rot_y`: an alias for `centre.rot_y`
 * `timestamp`: the time at which the marker was seen (when `R.see` was called).
 
-For example, the following code lists all of the markers the robot can see:
-
-```python
-markers = R.see()
-print "I can see", len(markers), "markers:"
-
-for m in markers:
-    if m.info.marker_type in (MARKER_TOKEN_GOLD, MARKER_TOKEN_SILVER):
-        print " - Token {0} is {1} metres away".format( m.info.offset, m.dist )
-    elif m.info.marker_type == MARKER_ARENA:
-        print " - Arena marker {0} is {1} metres away".format( m.info.offset, m.dist )
-```
-
-[sr-api]: https://studentrobotics.org/docs/programming/sr/
-
-### Problem description:
+### Problem description: ###
 
 The robot is the same one that you have used in the previous exercises (exercise1.py, exercise2.py, exercise3.py). 
 
@@ -100,9 +60,7 @@ Write a python script for achieving this robot’s behaviour:
 - avoid touching the golden boxes
 - when the robot is close to a silver box, it should grab it, and move it behind itself
 
-### Solution:
-
-#### Functions used to solve the task
+### Solution: ###
 
 ##### Initial parameters
 
@@ -116,21 +74,11 @@ This global variables are used to provide fixed values for the thresholds.
 - `search_g` is the angle from -45 to 45 degrees to detect golden boxes.
 - `angle_s` is the threshold of the angle to estimate if the silver or golden boxes are close to the robot.
 
-```python
-d_th = 0.4
-a_th = 2
-dist_detect = 1.5                # a distance to detect silver or gold 
-dist_rot = 100                   # a distance to detect the boxes in rotation
-
-## Distances used to find obstacles, silver boxes
-diff = 20
-mid_point = 90
-search_s = 70
-search_g = 45
-angle_s = 30 
-```
-
 ##### DRIVE function
+
+The simulated robot has two motors configured for skid steering, connected to a two-output [Motor Board](https://studentrobotics.org/docs/kit/motor_board). The left motor is connected to output `0` and the right motor to output `1`.
+
+The Motor Board API is identical to [that of the SR API](https://studentrobotics.org/docs/programming/sr/motors/), except that motor boards cannot be addressed by serial number. So, to turn on the spot at one quarter of full power, one might write the following:
 
 Function for setting a linear velocity with provided speed and time.
 
@@ -218,6 +166,11 @@ def boxes(distance, angle):
 
 ##### ROTATE function
 
+This function is used to rotate the wheel in case of finding the golden obstacles to avoid the collision. It is estimated by using the distance to the golden box with `dist_rot` global variable. The angles of avoidance with the wall is from `-diff_left` and `diff_left` from the left side and `-diff_right` and `diff_right` fro the right side.
+ 
+Returns:
+`True` if the angle is negative, then the robot turns left
+`False` if the angle is positive, then the robot turns right
 
 ```
 def rotate():
@@ -236,3 +189,4 @@ def rotate():
         turn(-25, 0.1)
         return True
 ```
+
