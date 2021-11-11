@@ -17,10 +17,9 @@ On Ubuntu, this can be accomplished by:
 * Get the location. In my case this was `/usr/local/lib/python2.7/dist-packages`
 * Create symlink: `ln -s path/to/simulator/sr/robot /usr/local/lib/python2.7/dist-packages/sr/`
 
-## Exercise
+## To run:
 -----------------------------
-
-To run the assignment:
+Open a terminal, git clone the task and run the following commands:
 
 ```bash
 $ python run.py assignment.py
@@ -89,3 +88,6 @@ for m in markers:
 ```
 
 [sr-api]: https://studentrobotics.org/docs/programming/sr/
+
+### The detailed explanation of the code:
+
