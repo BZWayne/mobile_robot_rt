@@ -1,7 +1,7 @@
 # Here are the exercises of RT course
 ## About this course
 
-Professor: [Carmine Tommaso Recchiuto](https://github.com/CarmineD8)
+Course Instructor: [Carmine Tommaso Recchiuto](https://github.com/CarmineD8)
 
 This course is oriented to learn Robotics Tools such as Python, C++, ROS/ROS2. As every course, it considers midterm assignments:
 
