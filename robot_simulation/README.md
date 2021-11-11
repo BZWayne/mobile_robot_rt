@@ -3,7 +3,7 @@ Python Robotics Simulator Assignment
 
 Results
 ----------------------
-My solution of the task is represented in my YouTube channel: https://youtu.be/UXKGQzI_MYQ
+My solution of the task is visually represented in my YouTube channel: https://youtu.be/UXKGQzI_MYQ
 
 Below, there is an explanation of how to run a code, problem and solution descriptions.
 
