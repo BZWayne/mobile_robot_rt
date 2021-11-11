@@ -1,6 +1,11 @@
 Python Robotics Simulator Assignment
 ================================
 
+### Results
+My solution of the task is represented in my YouTube channel: https://youtu.be/UXKGQzI_MYQ
+
+Below, there is an explanation of how to run a code, problem and solution descriptions.
+
 Installing and running
 ----------------------
 
@@ -179,7 +184,3 @@ def rotate():
         turn(-25, 0.1)
         return True
 ```
-
-### Results
-
-[![Watch the video](https://youtu.be/UXKGQzI_MYQ)
