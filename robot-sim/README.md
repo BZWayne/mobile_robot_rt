@@ -108,6 +108,11 @@ def turn(speed, seconds):
 ```
 
 ##### FIND_SILVER_TOKEN function
+This function to find the closest silver token
+
+Returns:
+`dist (float):` distance of the closest token (-1 if no token is detected)
+`rot_y (float):` angle between the robot and the token (-1 if no token is detected)
 
 ```
 def find_silver_token():
@@ -122,7 +127,11 @@ def find_silver_token():
         return dist, rot_y
 ```
 ##### FIND_GOLDEN_TOKEN function
+This function to find the closest golden token
 
+Returns:
+`dist (float):` distance of the closest token (-1 if no token is detected)
+`rot_y (float):` angle between the robot and the token (-1 if no token is detected)
 ```
 def find_golden_token():
     dist = dist_detect
@@ -141,12 +150,12 @@ def find_golden_token():
 This function is used to find the walls (golden boxes) and search for the silver boxes. 
 
 Arguments:
-- distance (float): distance of the closest wall (if the distance is -1 and less or equal than 1.5)
-- angle (float): angle between the robot and the token (-1 if no token is detected)
+- `distance (float):` distance of the closest wall (if the distance is -1 and less or equal than `dist_detect`)
+- `angle (float):` angle between the robot and the token (-1 if no token is detected)
 
 Returns:
-- True if the obstacles are closer to the robot than the silver boxes
-- False if the silver box is closer to the robot than the obstacles or not found in a distance at least 1.0 or in a 60 degree of search
+- `True` if the obstacles are closer to the robot than the silver boxes
+- `False` if the silver box is closer to the robot than the obstacles or not found in a distance at least 1.0 or from `-angle_s` to `angle_s`
 
 ```python
 def boxes(distance, angle):
