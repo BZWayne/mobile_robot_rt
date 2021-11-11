@@ -102,5 +102,32 @@ Write a python script for achieving this robot’s behaviour:
 
 ### Solution:
 
+#### Functions used to solve the task
 
+##### BOXES function
 
+This function is used to find the walls (golden boxes) and search for the silver boxes. 
+
+The arguments are:
+- distance (float): distance of the closest wall (if the distance is -1 and less or equal than 1.5)
+- angle (float): angle between the robot and the token (-1 if no token is detected)
+
+Returns:
+- True if the obstacles are closer to the robot than the silver boxes
+- False if the silver box is closer to the robot than the obstacles or not found in a distance at least 1.0 or in a 60 degree of search
+
+```python
+def boxes(distance, angle):
+    if distance == -1:
+        return True
+    else:
+        dist = dist_detect
+        for token in R.see():
+            if angle-angle_s<token.rot_y<angle+angle_s and token.dist < dist and token.info.marker_type is MARKER_TOKEN_GOLD:
+                dist=token.dist
+                rot_y=token.rot_y
+        if dist == dist_detect or (distance <= dist):
+            return False
+        elif (distance > dist):
+            return True
+```
