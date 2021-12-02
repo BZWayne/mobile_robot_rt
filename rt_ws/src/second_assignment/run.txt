@@ -1,0 +1,7 @@
+rosrun stage_ros stageros $(rospack find second_assignment)/world/my_world.world
+
+rosrun second_assignment controller
+
+rosrun second_assignment remote
+
+rosrun second_assignment gui
