@@ -21,7 +21,7 @@ Write a python script for achieving this robot’s behaviour:
 #### Results
 The video result of the first assignment is uploaded to my YouTube channel: https://youtu.be/UXKGQzI_MYQ
 
-### Assignment II: ROS 
+### Assignment II: ROS Robot Controller
 
 The second task is in `/rt_ws` folder. This is a simple, portable robot simulator developed by Student Robotics. Some of the arenas and the exercises have been modified for the Research Track I course. The detailed explaination of this task is in that folder. 
 
