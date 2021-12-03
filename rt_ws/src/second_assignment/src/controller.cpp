@@ -36,12 +36,12 @@ void Robot(const sensor_msgs::LaserScan::ConstPtr& msg){
 
     if(range_front<2){
         if(range_left>range_right){
-            vel.angular.z = 2;
-            vel.linear.x = 0.05;
+            vel.angular.z = 4;
+            vel.linear.x = 0.7;
         }
         else if(range_right>range_left){
-            vel.angular.z = -2;
-            vel.linear.x = 0.05;
+            vel.angular.z = -4;
+            vel.linear.x = 0.7;
         }
     }
     else{
