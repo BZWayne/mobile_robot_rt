@@ -31,6 +31,7 @@ bool remoteControl(second_assignment::Service::Request &in,
 	}
 	else if(in.setVal != 'x' && in.setVal != 'd' && in.setVal != 'a' && in.setVal != 'r'){
 		std::cout << "Wrong button\n";
+		return false;
 	}
 	out.getVal = finVal;
 	ROS_INFO("Speed: @[%f]\n", out.getVal);    

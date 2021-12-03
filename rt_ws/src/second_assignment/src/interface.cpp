@@ -11,16 +11,16 @@
 ros::ServiceClient client;
 ros::Publisher pub;
 
-char InputC(){
-	char c;
+char inputC(){
+	char command;
 	std::cout << "Speed UP (Yes, press a) or (No, press s)?\n";
-	std::cin >> c;
-	return c;
+	std::cin >> command;
+	return command;
 }
 
 void message(const sensor_msgs::LaserScan::ConstPtr& msg){
 	second_assignment::Service serv;
-	char in = InputC();
+	char in = inputC();
 	serv.request.setVal = in;
 	client.waitForExistence();
 	client.call(serv);

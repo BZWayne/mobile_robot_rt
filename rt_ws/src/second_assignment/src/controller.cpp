@@ -8,12 +8,17 @@
 ros::Publisher pub;
 geometry_msgs::Twist vel;
 
+float range_right;
+float range_front;
+float range_left;
+float ranger[721];
+
 float speed = 0;
 float changeAcc = 0;
 
 float measureDis(int min, int max, float dis[]){
 
-    float minDis = 500;
+    float minDis = 120;
     for(int i = min; i <= max; i++){
         if (dis[i]<=minDis) minDis = dis[i];
     }
@@ -21,17 +26,13 @@ float measureDis(int min, int max, float dis[]){
 }
 
 void Robot(const sensor_msgs::LaserScan::ConstPtr& msg){
-	float range_right;
-	float range_front;
-	float range_left;
-	float ranger[721];
 
     for(int i = 0; i<721; i++){
         ranger[i] = msg->ranges[i];
     }
-    range_right = measureDis(0, 100, ranger); 
-    range_front = measureDis(310, 410, ranger); 
-    range_left = measureDis(620, 720, ranger);
+    range_right = measureDis(0, 120, ranger); 
+    range_front = measureDis(300, 420, ranger); 
+    range_left = measureDis(600, 720, ranger);
 
     if(range_front<2){
         if(range_left>range_right){
@@ -62,8 +63,8 @@ int main (int argc, char **argv)
     ros::init(argc, argv, "controller");  
     ros::NodeHandle nh;
     pub = nh.advertise<geometry_msgs::Twist>("/cmd_vel", 1);   
-    ros::Subscriber sub2 = nh.subscribe("/acSpeed", 1, changeSpeed);
-    ros::Subscriber sub = nh.subscribe("/base_scan", 1, Robot);
+    ros::Subscriber sub_accSpeed = nh.subscribe("/acSpeed", 1, changeSpeed);
+    ros::Subscriber sub_laser = nh.subscribe("/base_scan", 1, Robot);
     ros::spin();
     return 0;
 }
