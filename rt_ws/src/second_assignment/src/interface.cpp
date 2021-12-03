@@ -16,11 +16,13 @@ void welcomeWord(){
 	std::cout << "You may increase or decrease the speed of the robot\n";
 	std::cout << "or reset to its initial position\n";
 	std::cout << "Here is the interface of remotely controlling the robot\n";
+	std::cout << "Press [a] to accelerate\n";
+	std::cout << "Press [d] to decelerate\n";
+	std::cout << "Press [r] to reset\n";
 }
 
 char inputC(){
 	char command;
-	std::cout << "Accelerate (Yes, press a) or Decelerate (No, press d)?\n";
 	std::cin >> command;
 	return command;
 }
