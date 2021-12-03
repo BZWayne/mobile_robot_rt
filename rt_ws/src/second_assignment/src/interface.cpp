@@ -11,9 +11,16 @@
 ros::ServiceClient client;
 ros::Publisher pub;
 
+void welcomeWord(){
+	std::cout << "Here is the interface of remotely controlling the robot\n";
+	std::cout << "You may increase or decrease the speed of the robot\n";
+	std::cout << "or reset to its initial position\n";
+	std::cout << "Here is the interface of remotely controlling the robot\n";
+}
+
 char inputC(){
 	char command;
-	std::cout << "Speed UP (Yes, press a) or (No, press s)?\n";
+	std::cout << "Accelerate (Yes, press a) or Decelerate (No, press d)?\n";
 	std::cin >> command;
 	return command;
 }
@@ -35,6 +42,7 @@ int main (int argc, char **argv)
 	ros::NodeHandle nh;
 	pub = nh.advertise<second_assignment::Speed>("/acSpeed", 10);   
 	client = nh.serviceClient<second_assignment::Service>("/change");
+	welcomeWord();
 	ros::Subscriber sub = nh.subscribe("/base_scan", 1, message);
 	ros::spin();
 	return 0;

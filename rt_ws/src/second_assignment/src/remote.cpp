@@ -26,20 +26,18 @@ bool remoteControl(second_assignment::Service::Request &in,
 	else if(in.setVal == 'r'){
 		ros::service::call("/reset_positions", res_server);
 	}
-	else if(in.setVal == 'x'){
-		return false;
-	}
-	else if(in.setVal != 'x' && in.setVal != 'd' && in.setVal != 'a' && in.setVal != 'r'){
+	else {
 		std::cout << "Wrong button\n";
 		return false;
 	}
 	out.getVal = finVal;
+	ROS_INFO("The value is: "); 
 	ROS_INFO("Speed: @[%f]\n", out.getVal);    
 	return true;
 }
 
 int main(int argc, char **argv){
-	ros::init(argc, argv, "server");
+	ros::init(argc, argv, "remote");
 	ros::NodeHandle nh;
 	ros::ServiceServer service =  nh.advertiseService("/change", remoteControl);
 	ros::spin();
