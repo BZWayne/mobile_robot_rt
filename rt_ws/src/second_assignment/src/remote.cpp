@@ -1,38 +1,46 @@
-#include "second_assignment/Service.h"
 #include "ros/ros.h"
+#include <ros/console.h>
+#include "sensor_msgs/LaserScan.h"
+#include "geometry_msgs/Twist.h"
+#include "second_assignment/Service.h"
+#include "second_assignment/Speed.h"
+#include "geometry_msgs/Twist.h"
 #include "std_srvs/Empty.h"
+#include "turtlesim/Spawn.h"
 
 
 std_srvs::Empty res_server;
-float stuff = 0;
+float finVal = 0;
 
-bool ServerCallback(second_assignment::Service::Request &req, second_assignment::Service::Response &res){
-	if(req.setVal == 'a'){
-		stuff += 0.5;
-		req.setVal = 'x';
+bool remoteControl(second_assignment::Service::Request &in, 
+				   second_assignment::Service::Response &out)
+{
+	if(in.setVal == 'a'){
+		finVal += 1.0;
+		in.setVal = 'x';
 	}
-	if(req.setVal == 's'){
-		stuff -= 0.5;
-		req.setVal = 'x';
+	else if(in.setVal == 'd'){
+		finVal -= 1.0;
+		in.setVal = 'x';
 	}
-	if(req.setVal == 'r'){
+	else if(in.setVal == 'r'){
 		ros::service::call("/reset_positions", res_server);
 	}
-	if(req.setVal == 'x'){
+	else if(in.setVal == 'x'){
 		return false;
 	}
-	if(req.setVal != 'x' && req.setVal != 's' && req.setVal != 'a' && req.setVal != 'r'){
-		std::cout << "It's not the right key!\n";
+	else if(in.setVal != 'x' && in.setVal != 'd' && in.setVal != 'a' && in.setVal != 'r'){
+		std::cout << "Wrong button\n";
 	}
-	res.getVal = stuff;
-	ROS_INFO("Right: @[%f]", res.getVal);    
+	out.getVal = finVal;
+	ROS_INFO("Speed: @[%f]\n", out.getVal);    
 	return true;
 }
 
 int main(int argc, char **argv){
 	ros::init(argc, argv, "server");
 	ros::NodeHandle nh;
-	ros::ServiceServer service =  nh.advertiseService("/accelarate", ServerCallback);
+	ros::ServiceServer service =  nh.advertiseService("/change", remoteControl);
 	ros::spin();
 	return 0;
 }

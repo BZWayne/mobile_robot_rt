@@ -142,7 +142,7 @@ include_directories(
 # add_executable(${PROJECT_NAME}_node src/second_assignment_node.cpp)
  add_executable(controller src/controller.cpp)
  add_executable(remote src/remote.cpp)
- add_executable(gui src/gui.cpp)
+ add_executable(interface src/interface.cpp)
 
 ## Rename C++ executable without prefix
 ## The above recommended prefix causes long target names, the following renames the
@@ -152,10 +152,9 @@ include_directories(
 
 ## Add cmake target dependencies of the executable
 ## same as for the library above
-# add_dependencies(${PROJECT_NAME}_node ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
  add_dependencies(controller ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
  add_dependencies(remote ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
- add_dependencies(gui ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
+ add_dependencies(interface ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
 
 ## Specify libraries to link a library or executable target against
  target_link_libraries(controller
@@ -165,7 +164,7 @@ include_directories(
 target_link_libraries(remote
   ${catkin_LIBRARIES}
 )
-target_link_libraries(gui
+target_link_libraries(interface
   ${catkin_LIBRARIES}
 )
 

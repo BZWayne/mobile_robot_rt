@@ -61,12 +61,6 @@ second_assignment/CMakeFiles/controller.dir/src/controller.cpp.o: /opt/ros/noeti
 second_assignment/CMakeFiles/controller.dir/src/controller.cpp.o: /opt/ros/noetic/include/rosconsole/macros_generated.h
 second_assignment/CMakeFiles/controller.dir/src/controller.cpp.o: /opt/ros/noetic/include/sensor_msgs/LaserScan.h
 second_assignment/CMakeFiles/controller.dir/src/controller.cpp.o: /opt/ros/noetic/include/std_msgs/Header.h
-second_assignment/CMakeFiles/controller.dir/src/controller.cpp.o: /opt/ros/noetic/include/std_srvs/Empty.h
-second_assignment/CMakeFiles/controller.dir/src/controller.cpp.o: /opt/ros/noetic/include/std_srvs/EmptyRequest.h
-second_assignment/CMakeFiles/controller.dir/src/controller.cpp.o: /opt/ros/noetic/include/std_srvs/EmptyResponse.h
-second_assignment/CMakeFiles/controller.dir/src/controller.cpp.o: /opt/ros/noetic/include/turtlesim/Spawn.h
-second_assignment/CMakeFiles/controller.dir/src/controller.cpp.o: /opt/ros/noetic/include/turtlesim/SpawnRequest.h
-second_assignment/CMakeFiles/controller.dir/src/controller.cpp.o: /opt/ros/noetic/include/turtlesim/SpawnResponse.h
 second_assignment/CMakeFiles/controller.dir/src/controller.cpp.o: /opt/ros/noetic/include/xmlrpcpp/XmlRpcDecl.h
 second_assignment/CMakeFiles/controller.dir/src/controller.cpp.o: /opt/ros/noetic/include/xmlrpcpp/XmlRpcValue.h
 second_assignment/CMakeFiles/controller.dir/src/controller.cpp.o: /root/Desktop/rt_exercises/rt_ws/devel/include/second_assignment/Service.h

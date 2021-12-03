@@ -4,4 +4,4 @@ rosrun second_assignment controller
 
 rosrun second_assignment remote
 
-rosrun second_assignment gui
+rosrun second_assignment interface

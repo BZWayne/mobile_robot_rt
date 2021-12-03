@@ -37,7 +37,6 @@
 /root/Desktop/rt_exercises/rt_ws/build/gtest/googletest/CMakeFiles/gtest.dir
 /root/Desktop/rt_exercises/rt_ws/build/second_assignment/CMakeFiles/install/strip.dir
 /root/Desktop/rt_exercises/rt_ws/build/second_assignment/CMakeFiles/list_install_components.dir
-/root/Desktop/rt_exercises/rt_ws/build/second_assignment/CMakeFiles/gui.dir
 /root/Desktop/rt_exercises/rt_ws/build/second_assignment/CMakeFiles/second_assignment_generate_messages_py.dir
 /root/Desktop/rt_exercises/rt_ws/build/second_assignment/CMakeFiles/second_assignment_generate_messages_nodejs.dir
 /root/Desktop/rt_exercises/rt_ws/build/second_assignment/CMakeFiles/install.dir
@@ -78,6 +77,7 @@
 /root/Desktop/rt_exercises/rt_ws/build/second_assignment/CMakeFiles/test.dir
 /root/Desktop/rt_exercises/rt_ws/build/second_assignment/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir
 /root/Desktop/rt_exercises/rt_ws/build/second_assignment/CMakeFiles/std_srvs_generate_messages_py.dir
+/root/Desktop/rt_exercises/rt_ws/build/second_assignment/CMakeFiles/interface.dir
 /root/Desktop/rt_exercises/rt_ws/build/second_assignment/CMakeFiles/second_assignment_gennodejs.dir
 /root/Desktop/rt_exercises/rt_ws/build/second_assignment/CMakeFiles/roscpp_generate_messages_py.dir
 /root/Desktop/rt_exercises/rt_ws/build/second_assignment/CMakeFiles/_second_assignment_generate_messages_check_deps_Speed.dir

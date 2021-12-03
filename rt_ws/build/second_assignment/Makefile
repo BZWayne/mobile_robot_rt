@@ -168,21 +168,6 @@ depend:
 .PHONY : depend
 
 # Convenience name for target.
-second_assignment/CMakeFiles/gui.dir/rule:
-	cd /root/Desktop/rt_exercises/rt_ws/build && $(MAKE) -f CMakeFiles/Makefile2 second_assignment/CMakeFiles/gui.dir/rule
-.PHONY : second_assignment/CMakeFiles/gui.dir/rule
-
-# Convenience name for target.
-gui: second_assignment/CMakeFiles/gui.dir/rule
-
-.PHONY : gui
-
-# fast build rule for target.
-gui/fast:
-	cd /root/Desktop/rt_exercises/rt_ws/build && $(MAKE) -f second_assignment/CMakeFiles/gui.dir/build.make second_assignment/CMakeFiles/gui.dir/build
-.PHONY : gui/fast
-
-# Convenience name for target.
 second_assignment/CMakeFiles/second_assignment_generate_messages_py.dir/rule:
 	cd /root/Desktop/rt_exercises/rt_ws/build && $(MAKE) -f CMakeFiles/Makefile2 second_assignment/CMakeFiles/second_assignment_generate_messages_py.dir/rule
 .PHONY : second_assignment/CMakeFiles/second_assignment_generate_messages_py.dir/rule
@@ -708,6 +693,21 @@ std_srvs_generate_messages_py/fast:
 .PHONY : std_srvs_generate_messages_py/fast
 
 # Convenience name for target.
+second_assignment/CMakeFiles/interface.dir/rule:
+	cd /root/Desktop/rt_exercises/rt_ws/build && $(MAKE) -f CMakeFiles/Makefile2 second_assignment/CMakeFiles/interface.dir/rule
+.PHONY : second_assignment/CMakeFiles/interface.dir/rule
+
+# Convenience name for target.
+interface: second_assignment/CMakeFiles/interface.dir/rule
+
+.PHONY : interface
+
+# fast build rule for target.
+interface/fast:
+	cd /root/Desktop/rt_exercises/rt_ws/build && $(MAKE) -f second_assignment/CMakeFiles/interface.dir/build.make second_assignment/CMakeFiles/interface.dir/build
+.PHONY : interface/fast
+
+# Convenience name for target.
 second_assignment/CMakeFiles/second_assignment_gennodejs.dir/rule:
 	cd /root/Desktop/rt_exercises/rt_ws/build && $(MAKE) -f CMakeFiles/Makefile2 second_assignment/CMakeFiles/second_assignment_gennodejs.dir/rule
 .PHONY : second_assignment/CMakeFiles/second_assignment_gennodejs.dir/rule
@@ -809,32 +809,32 @@ src/controller.cpp.s:
 	cd /root/Desktop/rt_exercises/rt_ws/build && $(MAKE) -f second_assignment/CMakeFiles/controller.dir/build.make second_assignment/CMakeFiles/controller.dir/src/controller.cpp.s
 .PHONY : src/controller.cpp.s
 
-src/gui.o: src/gui.cpp.o
+src/interface.o: src/interface.cpp.o
 
-.PHONY : src/gui.o
+.PHONY : src/interface.o
 
 # target to build an object file
-src/gui.cpp.o:
-	cd /root/Desktop/rt_exercises/rt_ws/build && $(MAKE) -f second_assignment/CMakeFiles/gui.dir/build.make second_assignment/CMakeFiles/gui.dir/src/gui.cpp.o
-.PHONY : src/gui.cpp.o
+src/interface.cpp.o:
+	cd /root/Desktop/rt_exercises/rt_ws/build && $(MAKE) -f second_assignment/CMakeFiles/interface.dir/build.make second_assignment/CMakeFiles/interface.dir/src/interface.cpp.o
+.PHONY : src/interface.cpp.o
 
-src/gui.i: src/gui.cpp.i
+src/interface.i: src/interface.cpp.i
 
-.PHONY : src/gui.i
+.PHONY : src/interface.i
 
 # target to preprocess a source file
-src/gui.cpp.i:
-	cd /root/Desktop/rt_exercises/rt_ws/build && $(MAKE) -f second_assignment/CMakeFiles/gui.dir/build.make second_assignment/CMakeFiles/gui.dir/src/gui.cpp.i
-.PHONY : src/gui.cpp.i
+src/interface.cpp.i:
+	cd /root/Desktop/rt_exercises/rt_ws/build && $(MAKE) -f second_assignment/CMakeFiles/interface.dir/build.make second_assignment/CMakeFiles/interface.dir/src/interface.cpp.i
+.PHONY : src/interface.cpp.i
 
-src/gui.s: src/gui.cpp.s
+src/interface.s: src/interface.cpp.s
 
-.PHONY : src/gui.s
+.PHONY : src/interface.s
 
 # target to generate assembly for a file
-src/gui.cpp.s:
-	cd /root/Desktop/rt_exercises/rt_ws/build && $(MAKE) -f second_assignment/CMakeFiles/gui.dir/build.make second_assignment/CMakeFiles/gui.dir/src/gui.cpp.s
-.PHONY : src/gui.cpp.s
+src/interface.cpp.s:
+	cd /root/Desktop/rt_exercises/rt_ws/build && $(MAKE) -f second_assignment/CMakeFiles/interface.dir/build.make second_assignment/CMakeFiles/interface.dir/src/interface.cpp.s
+.PHONY : src/interface.cpp.s
 
 src/remote.o: src/remote.cpp.o
 
@@ -871,7 +871,6 @@ help:
 	@echo "... depend"
 	@echo "... install/strip"
 	@echo "... list_install_components"
-	@echo "... gui"
 	@echo "... second_assignment_generate_messages_py"
 	@echo "... second_assignment_generate_messages_nodejs"
 	@echo "... install"
@@ -912,6 +911,7 @@ help:
 	@echo "... test"
 	@echo "... rosgraph_msgs_generate_messages_cpp"
 	@echo "... std_srvs_generate_messages_py"
+	@echo "... interface"
 	@echo "... second_assignment_gennodejs"
 	@echo "... roscpp_generate_messages_py"
 	@echo "... _second_assignment_generate_messages_check_deps_Speed"
@@ -920,9 +920,9 @@ help:
 	@echo "... src/controller.o"
 	@echo "... src/controller.i"
 	@echo "... src/controller.s"
-	@echo "... src/gui.o"
-	@echo "... src/gui.i"
-	@echo "... src/gui.s"
+	@echo "... src/interface.o"
+	@echo "... src/interface.i"
+	@echo "... src/interface.s"
 	@echo "... src/remote.o"
 	@echo "... src/remote.i"
 	@echo "... src/remote.s"

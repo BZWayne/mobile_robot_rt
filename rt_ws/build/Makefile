@@ -285,19 +285,6 @@ gtest/fast:
 .PHONY : gtest/fast
 
 #=============================================================================
-# Target rules for targets named gui
-
-# Build rule for target.
-gui: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 gui
-.PHONY : gui
-
-# fast build rule for target.
-gui/fast:
-	$(MAKE) -f second_assignment/CMakeFiles/gui.dir/build.make second_assignment/CMakeFiles/gui.dir/build
-.PHONY : gui/fast
-
-#=============================================================================
 # Target rules for targets named second_assignment_generate_messages_py
 
 # Build rule for target.
@@ -753,6 +740,19 @@ std_srvs_generate_messages_py/fast:
 .PHONY : std_srvs_generate_messages_py/fast
 
 #=============================================================================
+# Target rules for targets named interface
+
+# Build rule for target.
+interface: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 interface
+.PHONY : interface
+
+# fast build rule for target.
+interface/fast:
+	$(MAKE) -f second_assignment/CMakeFiles/interface.dir/build.make second_assignment/CMakeFiles/interface.dir/build
+.PHONY : interface/fast
+
+#=============================================================================
 # Target rules for targets named second_assignment_gennodejs
 
 # Build rule for target.
@@ -839,7 +839,6 @@ help:
 	@echo "... gmock"
 	@echo "... gtest_main"
 	@echo "... gtest"
-	@echo "... gui"
 	@echo "... second_assignment_generate_messages_py"
 	@echo "... second_assignment_generate_messages_nodejs"
 	@echo "... second_assignment_generate_messages_lisp"
@@ -875,6 +874,7 @@ help:
 	@echo "... std_srvs_generate_messages_nodejs"
 	@echo "... rosgraph_msgs_generate_messages_cpp"
 	@echo "... std_srvs_generate_messages_py"
+	@echo "... interface"
 	@echo "... second_assignment_gennodejs"
 	@echo "... roscpp_generate_messages_py"
 	@echo "... _second_assignment_generate_messages_check_deps_Speed"
