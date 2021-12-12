@@ -7,11 +7,13 @@ My solution of the task is visually represented in my YouTube channel: https://y
 
 Below, there is an explanation of how to run a code, problem and solution descriptions.
 
-Installing and running
+Installing and building
 ----------------------
 
 ```
-$ git clone 
+$ git clone https://github.com/BZWayne/rt_exercises.git
+$ cd /rt_exercises/rt_ws/
+$ cd catkin_make
 ```
 
 ## To run:
@@ -19,210 +21,121 @@ $ git clone
 Open a terminal, git clone the task and run the following commands:
 
 ```bash
-$ python run.py assignment.py
+$ rosrun stage_ros stageros $(rospack find second_assignment)/world/my_world.world
+
+$ rosrun second_assignment controller
+
+$ rosrun second_assignment remote
+
+$ rosrun second_assignment interface
 ```
 
 ## Problem description:
 ----------------------
+Similarly to the first assignment, you have a robot here which should move autonomously inside a circuit. Here however:
 
-The robot is the same one that you have used in the previous exercises (exercise1.py, exercise2.py, exercise3.py). 
+It must be used ROS for controlling the robot
+The robot is endowed with laser scanners
+- Modify a node for the control of the robot, and an additional node which interacts with the user to:
+- Add increase / decrease the speed
+- Add reset the robot’s position
+- Everything should be done in cpp
 
-The only difference is that now the sensors
-can detect boxes around all directions (from -180.0 degrees to 180.0 degrees).
-Write a python script for achieving this robot’s behaviour:
-- constrantly drive the robot around the circuit in the counter-clockwise direction
-- avoid touching the golden boxes
-- when the robot is close to a silver box, it should grab it, and move it behind itself
+Controlling the robot:
+- Robot should publish a velocity on the cmd_vel topic
+- Robot can use the /base_scan topic to get information about the surrounding environment.
+In particular, the information about the distance of the obstacles is in the ranges vector. Hint: divide the ranges vector into subsections, and take the minimum value of each subsection. This will provide information about the closest obstacles.
 
 ## Solution:
 ----------------------
-
 ### Flowchart
 
-![alt text](https://github.com/BZWayne/rt_exercises/blob/main/robot_simulation/flowchart.png)
+![alt text](https://github.com/BZWayne/rt_exercises/blob/main/images/flowchart.png)
 
-### Initial parameters
-
-This global variables are used to provide fixed values for the thresholds.
-
-- `d_th` is the threshold of the distance to grab the silver box
-- `a_th` is the threshold of the angle to move toward the silver box
-- `dist_detect` is the threshold the distance to detect boxes
-- `dist_rot` is the threshold of the rotate() function to avoid collisions
-- `search_s` is the angle from -70 to 70 degrees to detect silver boxes. Also used to avoid previous grabbed silver boxes
-- `search_g` is the angle from -45 to 45 degrees to detect golden boxes.
-- `angle_s` is the threshold of the angle to estimate if the silver or golden boxes are close to the robot.
-- `diff_left` and `diff_right` is the threshold used to avoid the collisions from the sides of the robot
-
-### DRIVE function
-
-The simulated robot has two motors configured for skid steering, connected to a two-output [Motor Board](https://studentrobotics.org/docs/kit/motor_board). The left motor is connected to output `0` and the right motor to output `1`.
-
-The Motor Board API is identical to [that of the SR API](https://studentrobotics.org/docs/programming/sr/motors/), except that motor boards cannot be addressed by serial number. So, to turn on the spot at one quarter of full power, one might write the following:
-
-Function for setting a linear velocity with provided speed and time.
-
-Arguments: speed (int): the speed of the wheels seconds (int): the time interval
+### CONTROLLER script
+#### Measure Distance Function
+This function measures the neasrest distance to the obstacle in order to move around
 
 ```
-def drive(speed, seconds):
-    R.motors[0].m0.power = speed
-    R.motors[0].m1.power = speed
-    time.sleep(seconds)
-    R.motors[0].m0.power = 0
-    R.motors[0].m1.power = 0
+    for(int i = min; i <= max; i++){
+        if (dis[i]<=minDis) minDis = dis[i];
+    }
+    return minDis;
+}
 ```
 
-### TURN function
-
-Function for setting an angular velocity
-
-Arguments: speed (int): the speed of the wheels seconds (int): the time interval
-```
-def turn(speed, seconds):
-    R.motors[0].m0.power = speed
-    R.motors[0].m1.power = -speed
-    time.sleep(seconds)
-    R.motors[0].m0.power = 0
-    R.motors[0].m1.power = 0
-```
-
-### FIND_SILVER_TOKEN function
-This function to find the closest silver token
-
-Returns:
-`dist (float):` distance of the closest token (-1 if no token is detected)
-`rot_y (float):` angle between the robot and the token (-1 if no token is detected)
+#### Robot() Function
+This function controls the robot movement by turning left or ride to avoid the obstacle, or drive straight
 
 ```
-def find_silver_token():
-    dist = dist_detect
-    for token in R.see():
-        if -search_s<token.rot_y<search_s and token.dist < dist and token.info.marker_type is MARKER_TOKEN_SILVER:
-            dist=token.dist
-            rot_y=token.rot_y
-    if dist == dist_detect:
-        return -1, -1
-    else:
-        return dist, rot_y
-```
-### FIND_GOLDEN_TOKEN function
-This function to find the closest golden token
-
-Returns:
-`dist (float):` distance of the closest token (-1 if no token is detected)
-`rot_y (float):` angle between the robot and the token (-1 if no token is detected)
-```
-def find_golden_token():
-    dist = dist_detect
-    for token in R.see():
-        if -search_g<token.rot_y<search_g and token.dist < dist and token.info.marker_type is MARKER_TOKEN_GOLD:
-            dist=token.dist
-            rot_y=token.rot_y
-    if dist == dist_detect:
-        return -1, -1
-    else:
-        return dist, rot_y
+    if(range_front<2){
+        if(range_left>range_right){
+            vel.angular.z = 2.5;
+            vel.linear.x = 0.7;
+        }
+        else if(range_right>range_left){
+            vel.angular.z = -2.5;
+            vel.linear.x = 0.7;
+        }
+    }
+    else{
+        vel.linear.x = 1 + changeAcc;
+        vel.angular.z = 0;
+    }
 ```
 
-### BOXES function
-
-This function is used to find the walls (golden boxes) and search for the silver boxes. 
-
-Arguments:
-- `distance (float):` distance of the closest wall (if the distance is -1 and less or equal than `dist_detect`)
-- `angle (float):` angle between the robot and the token (-1 if no token is detected)
-
-Returns:
-- `True` if the obstacles are closer to the robot than the silver boxes
-- `False` if the silver box is closer to the robot than the obstacles or not found in a distance at least 1.0 or from `-angle_s` to `angle_s`
-
-```python
-def boxes(distance, angle):
-    if distance == -1:
-        return True
-    else:
-        dist = dist_detect
-        for token in R.see():
-            if angle-angle_s<token.rot_y<angle+angle_s and token.dist < dist and token.info.marker_type is MARKER_TOKEN_GOLD:
-                dist=token.dist
-                rot_y=token.rot_y
-        if dist == dist_detect or (distance <= dist):
-            return False
-        elif (distance > dist):
-            return True
+#### Changing Speed Function
+This function controls the accelaration of robot to increase or decrease the speed
+##### changeSpeed() 
+```
+	changeAcc = aVal->data;
+    ROS_INFO("I am changing the speed: [%f]", changeAcc);
+}
 ```
 
-### ROTATE function
-
-This function is used to rotate the wheel in case of finding the golden obstacles to avoid the collision. It is estimated by using the distance to the golden box with `dist_rot` global variable. The angles of avoidance with the wall is from `-diff_left` and `diff_left` from the left side and `-diff_right` and `diff_right` fro the right side.
- 
-Returns:
-`True` if the angle is negative, then the robot turns left
-`False` if the angle is positive, then the robot turns right
-
+### REMOTE script
+This script is needed for users to connect with the server to control the speed or reset its position
+#### remoteControl() 
 ```
-def rotate():
-    dist = dist_rot
-    # Detecting any obstacles from the sides to avoid it by rotating 
-    for token in R.see():
-        if (-diff_left<token.rot_y<-diff_right or diff_right<token.rot_y<diff_left) and token.dist < dist and token.info.marker_type is MARKER_TOKEN_GOLD:
-            dist = token.dist
-            rot_y = token.rot_y
-    # Turning right with a speed of 25 in 0.1 sec
-    if rot_y < 0:
-        turn(25, 0.1)
-        return False
-    # Turning left with a speed of 25 in 0.1 sec
-    else:
-        turn(-25, 0.1)
-        return True
+	if(in.setVal == 'a'){
+		finVal += 1.0;
+		in.setVal = 'x';
+	}
+	else if(in.setVal == 'd'){
+		finVal -= 1.0;
+		in.setVal = 'x';
+	}
+	else if(in.setVal == 'r'){
+		ros::service::call("/reset_positions", res_server);
+	}
+	else {
+		std::cout << "Wrong button\n";
+		return false;
+	}
 ```
 
-### RUNNING THE PROGRAM 
+### INTERFACE script
+This script is needed for users to press commands to control the speed or reset robot's position
 
-To detect any obstacles or silver boxes, from the BOX function, we receive `True` or `False` returns. If the box is True, then it means wheather the golden box is closer than silver box or nothing is detected in front of the robot. If nothing is detected, then robot moves straight with a constant speed, otherwise, it will use ROTATE function to avoid collisions.
-
+#### InputC() is the function to import char
 ```
-    if box is True:
-        # If there is any obstacles, and the distance is less than 1
-        if (dist_gold!=-1 and dist_gold < 1.0):
-            print("Avoid obstacles")
-            rotate()    
-        # If nothing from both sides        
-        else:
-            print("Drive straight")
-            drive(60,0.2)
- ```
- However, if the silver box is closer to the robot, then depending where the box is located, the robot will move towards the box. Depending on the `a_th` global parameters, it will turn its wheels or move straight.
- 
- ```
-    # If the silver box is detected
-    elif (box is False):
+	char command;
+	std::cin >> command;
+	return command;
+}
+```
 
-        # Turning to the direction of silver box
-        if angle_silver < -a_th:
-            print ("Rotate left")
-            turn(-15, 0.1)
-                            
-        elif angle_silver > a_th:
-            print ("Rotate right")
-            turn(+15, 0.1)
-            
-        elif (-a_th < angle_silver <a_th):
-            print ("Move straight to catch it")
-            drive(50, 0.15)
- ```
- 
- Here is the example of how the robot will pick up the box. If the robot is exceeds `d_th`, then it is close to the silver box to grab it, turn around, release behind itself and turn back. For this case, `R.grab()` function is used to catch the box. 
- 
- ```       
-        if dist_silver < d_th:
-            print ("Grab a silver box")
-            R.grab()
-            turn(25,2.5)
-            # drive(25,1)
-            R.release()
-            drive(-25,1)
-            turn(-25,2.5)
-  ```
+#### message() is the function to receive the command from the user and control the robot
+```
+	second_assignment::Service serv;
+	char in = inputC();
+	serv.request.setVal = in;
+	client.waitForExistence();
+	client.call(serv);
+    
+	// changing the speed
+	std_msgs::Float32 n;
+	n.data = serv.response.getVal;
+	pub.publish(n);
+}
+```
