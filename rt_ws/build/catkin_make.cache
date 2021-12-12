@@ -1,2 +1,0 @@
-second_assignment
--DCATKIN_DEVEL_PREFIX=/root/Desktop/rt_exercises/rt_ws/devel -DCMAKE_INSTALL_PREFIX=/root/Desktop/rt_exercises/rt_ws/install -G Unix Makefiles

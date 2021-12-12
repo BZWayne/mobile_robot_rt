@@ -1,8 +1,0 @@
-prefix=/root/Desktop/rt_exercises/rt_ws/devel
-
-Name: second_assignment
-Description: Description of second_assignment
-Version: 0.0.0
-Cflags: -I/root/Desktop/rt_exercises/rt_ws/devel/include
-Libs: -L${prefix}/lib 
-Requires: 
