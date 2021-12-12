@@ -48,7 +48,7 @@ Write a python script for achieving this robot’s behaviour:
 
 ### Flowchart
 
-![alt text](https://github.com/BZWayne/rt_exercises/blob/main/robot_simulation/flowchart.png)
+![alt text](https://github.com/BZWayne/rt_exercises/blob/main/robot_simulation_python/flowchart.png)
 
 ### Initial parameters
 
