@@ -18,9 +18,11 @@ $ cd catkin_make
 
 ## To run:
 -----------------------------
-Open a terminal, git clone the task and run the following commands:
+Open 5 terminals and run the following commands:
 
 ```bash
+$ roscore
+
 $ rosrun stage_ros stageros $(rospack find second_assignment)/world/my_world.world
 
 $ rosrun second_assignment controller
