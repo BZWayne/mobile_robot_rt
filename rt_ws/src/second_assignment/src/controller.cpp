@@ -8,16 +8,16 @@
 ros::Publisher pub;
 geometry_msgs::Twist vel;
 
+// declaring float variables
 float range_right;
 float range_front;
 float range_left;
 float ranger[721];
-
-float speed = 0;
 float changeAcc = 0;
+float velocity;
 
+// measure the nearest distance to the obstacle
 float measureDis(int min, int max, float dis[]){
-
     float minDis = 120;
     for(int i = min; i <= max; i++){
         if (dis[i]<=minDis) minDis = dis[i];
@@ -25,6 +25,7 @@ float measureDis(int min, int max, float dis[]){
     return minDis;
 }
 
+// Robot movement
 void Robot(const sensor_msgs::LaserScan::ConstPtr& msg){
 
     for(int i = 0; i<721; i++){
@@ -36,11 +37,11 @@ void Robot(const sensor_msgs::LaserScan::ConstPtr& msg){
 
     if(range_front<2){
         if(range_left>range_right){
-            vel.angular.z = 4;
+            vel.angular.z = 2.5;
             vel.linear.x = 0.7;
         }
         else if(range_right>range_left){
-            vel.angular.z = -4;
+            vel.angular.z = -2.5;
             vel.linear.x = 0.7;
         }
     }
@@ -48,18 +49,18 @@ void Robot(const sensor_msgs::LaserScan::ConstPtr& msg){
         vel.linear.x = 1 + changeAcc;
         vel.angular.z = 0;
     }
-    float velocity = vel.linear.x;
-    ROS_INFO("Speed: @[%f]\n", speed);    
+    velocity = vel.linear.x;  
     pub.publish(vel);
 }
 
-
+// Changing the speed 
 void changeSpeed(const std_msgs::Float32::ConstPtr& aVal){
-    ROS_INFO("I am changing the speed: [%f]", aVal->data);
+	changeAcc = aVal->data;
+    ROS_INFO("I am changing the speed: [%f]", changeAcc);
 }
 
-int main (int argc, char **argv)
-{ 
+// Main function
+int main (int argc, char **argv) { 
     ros::init(argc, argv, "controller");  
     ros::NodeHandle nh;
     pub = nh.advertise<geometry_msgs::Twist>("/cmd_vel", 1);   

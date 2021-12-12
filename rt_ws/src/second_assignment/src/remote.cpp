@@ -12,6 +12,12 @@
 std_srvs::Empty res_server;
 float finVal = 0;
 
+// Control buttons
+// Increases by +1 if pressed [a]
+// Decreases by -1 if pressed [d]
+// Resets it position if pressed [r]
+// Sends error if wrong command
+
 bool remoteControl(second_assignment::Service::Request &in, 
 				   second_assignment::Service::Response &out)
 {
@@ -36,6 +42,7 @@ bool remoteControl(second_assignment::Service::Request &in,
 	return true;
 }
 
+// Main functions
 int main(int argc, char **argv){
 	ros::init(argc, argv, "remote");
 	ros::NodeHandle nh;

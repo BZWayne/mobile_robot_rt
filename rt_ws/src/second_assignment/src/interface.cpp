@@ -11,6 +11,7 @@
 ros::ServiceClient client;
 ros::Publisher pub;
 
+// Introduction
 void welcomeWord(){
 	std::cout << "Here is the interface of remotely controlling the robot\n";
 	std::cout << "You may increase or decrease the speed of the robot\n";
@@ -21,25 +22,28 @@ void welcomeWord(){
 	std::cout << "Press [r] to reset\n";
 }
 
+// Pressing buttons to control
 char inputC(){
 	char command;
 	std::cin >> command;
 	return command;
 }
 
+// responding to the control buttons
 void message(const sensor_msgs::LaserScan::ConstPtr& msg){
 	second_assignment::Service serv;
 	char in = inputC();
 	serv.request.setVal = in;
 	client.waitForExistence();
 	client.call(serv);
+	// changing the speed
 	std_msgs::Float32 n;
 	n.data = serv.response.getVal;
 	pub.publish(n);
 }
 
-int main (int argc, char **argv) 
-{
+// Main function
+int main (int argc, char **argv) {
 	ros::init(argc, argv, "interface"); 
 	ros::NodeHandle nh;
 	pub = nh.advertise<std_msgs::Float32>("/acSpeed", 10);   
