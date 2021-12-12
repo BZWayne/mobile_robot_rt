@@ -53,22 +53,15 @@ CMAKE_BINARY_DIR = /root/Desktop/rt_exercises/rt_ws/build
 # Include the progress variables for this target.
 include second_assignment/CMakeFiles/second_assignment_generate_messages_lisp.dir/progress.make
 
-second_assignment/CMakeFiles/second_assignment_generate_messages_lisp: /root/Desktop/rt_exercises/rt_ws/devel/share/common-lisp/ros/second_assignment/msg/Speed.lisp
 second_assignment/CMakeFiles/second_assignment_generate_messages_lisp: /root/Desktop/rt_exercises/rt_ws/devel/share/common-lisp/ros/second_assignment/srv/Service.lisp
 
 
-/root/Desktop/rt_exercises/rt_ws/devel/share/common-lisp/ros/second_assignment/msg/Speed.lisp: /opt/ros/noetic/lib/genlisp/gen_lisp.py
-/root/Desktop/rt_exercises/rt_ws/devel/share/common-lisp/ros/second_assignment/msg/Speed.lisp: /root/Desktop/rt_exercises/rt_ws/src/second_assignment/msg/Speed.msg
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/root/Desktop/rt_exercises/rt_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating Lisp code from second_assignment/Speed.msg"
-	cd /root/Desktop/rt_exercises/rt_ws/build/second_assignment && ../catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/genlisp/cmake/../../../lib/genlisp/gen_lisp.py /root/Desktop/rt_exercises/rt_ws/src/second_assignment/msg/Speed.msg -Isecond_assignment:/root/Desktop/rt_exercises/rt_ws/src/second_assignment/msg -Igeometry_msgs:/opt/ros/noetic/share/geometry_msgs/cmake/../msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -p second_assignment -o /root/Desktop/rt_exercises/rt_ws/devel/share/common-lisp/ros/second_assignment/msg
-
 /root/Desktop/rt_exercises/rt_ws/devel/share/common-lisp/ros/second_assignment/srv/Service.lisp: /opt/ros/noetic/lib/genlisp/gen_lisp.py
 /root/Desktop/rt_exercises/rt_ws/devel/share/common-lisp/ros/second_assignment/srv/Service.lisp: /root/Desktop/rt_exercises/rt_ws/src/second_assignment/srv/Service.srv
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/root/Desktop/rt_exercises/rt_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Generating Lisp code from second_assignment/Service.srv"
-	cd /root/Desktop/rt_exercises/rt_ws/build/second_assignment && ../catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/genlisp/cmake/../../../lib/genlisp/gen_lisp.py /root/Desktop/rt_exercises/rt_ws/src/second_assignment/srv/Service.srv -Isecond_assignment:/root/Desktop/rt_exercises/rt_ws/src/second_assignment/msg -Igeometry_msgs:/opt/ros/noetic/share/geometry_msgs/cmake/../msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -p second_assignment -o /root/Desktop/rt_exercises/rt_ws/devel/share/common-lisp/ros/second_assignment/srv
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/root/Desktop/rt_exercises/rt_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating Lisp code from second_assignment/Service.srv"
+	cd /root/Desktop/rt_exercises/rt_ws/build/second_assignment && ../catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/genlisp/cmake/../../../lib/genlisp/gen_lisp.py /root/Desktop/rt_exercises/rt_ws/src/second_assignment/srv/Service.srv -Igeometry_msgs:/opt/ros/noetic/share/geometry_msgs/cmake/../msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -p second_assignment -o /root/Desktop/rt_exercises/rt_ws/devel/share/common-lisp/ros/second_assignment/srv
 
 second_assignment_generate_messages_lisp: second_assignment/CMakeFiles/second_assignment_generate_messages_lisp
-second_assignment_generate_messages_lisp: /root/Desktop/rt_exercises/rt_ws/devel/share/common-lisp/ros/second_assignment/msg/Speed.lisp
 second_assignment_generate_messages_lisp: /root/Desktop/rt_exercises/rt_ws/devel/share/common-lisp/ros/second_assignment/srv/Service.lisp
 second_assignment_generate_messages_lisp: second_assignment/CMakeFiles/second_assignment_generate_messages_lisp.dir/build.make
 

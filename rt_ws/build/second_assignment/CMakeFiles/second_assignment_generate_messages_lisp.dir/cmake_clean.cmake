@@ -1,5 +1,4 @@
 file(REMOVE_RECURSE
-  "/root/Desktop/rt_exercises/rt_ws/devel/share/common-lisp/ros/second_assignment/msg/Speed.lisp"
   "/root/Desktop/rt_exercises/rt_ws/devel/share/common-lisp/ros/second_assignment/srv/Service.lisp"
   "CMakeFiles/second_assignment_generate_messages_lisp"
 )

@@ -1,3 +1,4 @@
 char setVal
+float32 acSpeed
 ---
 float32 getVal

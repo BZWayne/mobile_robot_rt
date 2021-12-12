@@ -22,6 +22,7 @@ class ServiceRequest {
     if (initObj === null) {
       // initObj === null is a special case for deserialization where we don't initialize fields
       this.setVal = null;
+      this.acSpeed = null;
     }
     else {
       if (initObj.hasOwnProperty('setVal')) {
@@ -30,6 +31,12 @@ class ServiceRequest {
       else {
         this.setVal = 0;
       }
+      if (initObj.hasOwnProperty('acSpeed')) {
+        this.acSpeed = initObj.acSpeed
+      }
+      else {
+        this.acSpeed = 0.0;
+      }
     }
   }
 
@@ -37,6 +44,8 @@ class ServiceRequest {
     // Serializes a message object of type ServiceRequest
     // Serialize message field [setVal]
     bufferOffset = _serializer.char(obj.setVal, buffer, bufferOffset);
+    // Serialize message field [acSpeed]
+    bufferOffset = _serializer.float32(obj.acSpeed, buffer, bufferOffset);
     return bufferOffset;
   }
 
@@ -46,11 +55,13 @@ class ServiceRequest {
     let data = new ServiceRequest(null);
     // Deserialize message field [setVal]
     data.setVal = _deserializer.char(buffer, bufferOffset);
+    // Deserialize message field [acSpeed]
+    data.acSpeed = _deserializer.float32(buffer, bufferOffset);
     return data;
   }
 
   static getMessageSize(object) {
-    return 1;
+    return 5;
   }
 
   static datatype() {
@@ -60,13 +71,14 @@ class ServiceRequest {
 
   static md5sum() {
     //Returns md5sum for a message object
-    return '700f3d0ef2d3afaa15c71d548b552f53';
+    return 'e2a538ab618e9c953ca027f7639a85e4';
   }
 
   static messageDefinition() {
     // Returns full string definition for message
     return `
     char setVal
+    float32 acSpeed
     
     `;
   }
@@ -82,6 +94,13 @@ class ServiceRequest {
     }
     else {
       resolved.setVal = 0
+    }
+
+    if (msg.acSpeed !== undefined) {
+      resolved.acSpeed = msg.acSpeed;
+    }
+    else {
+      resolved.acSpeed = 0.0
     }
 
     return resolved;
@@ -163,6 +182,6 @@ class ServiceResponse {
 module.exports = {
   Request: ServiceRequest,
   Response: ServiceResponse,
-  md5sum() { return '4f1064e684dd3d6da99d55dc37eb289e'; },
+  md5sum() { return '8779e7bdb2387b37c12a283a613e834c'; },
   datatype() { return 'second_assignment/Service'; }
 };

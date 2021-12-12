@@ -1,5 +1,4 @@
 file(REMOVE_RECURSE
-  "/root/Desktop/rt_exercises/rt_ws/devel/lib/python3/dist-packages/second_assignment/msg/_Speed.py"
   "/root/Desktop/rt_exercises/rt_ws/devel/lib/python3/dist-packages/second_assignment/msg/__init__.py"
   "/root/Desktop/rt_exercises/rt_ws/devel/lib/python3/dist-packages/second_assignment/srv/_Service.py"
   "/root/Desktop/rt_exercises/rt_ws/devel/lib/python3/dist-packages/second_assignment/srv/__init__.py"

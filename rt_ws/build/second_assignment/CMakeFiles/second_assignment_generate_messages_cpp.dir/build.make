@@ -53,25 +53,17 @@ CMAKE_BINARY_DIR = /root/Desktop/rt_exercises/rt_ws/build
 # Include the progress variables for this target.
 include second_assignment/CMakeFiles/second_assignment_generate_messages_cpp.dir/progress.make
 
-second_assignment/CMakeFiles/second_assignment_generate_messages_cpp: /root/Desktop/rt_exercises/rt_ws/devel/include/second_assignment/Speed.h
 second_assignment/CMakeFiles/second_assignment_generate_messages_cpp: /root/Desktop/rt_exercises/rt_ws/devel/include/second_assignment/Service.h
 
-
-/root/Desktop/rt_exercises/rt_ws/devel/include/second_assignment/Speed.h: /opt/ros/noetic/lib/gencpp/gen_cpp.py
-/root/Desktop/rt_exercises/rt_ws/devel/include/second_assignment/Speed.h: /root/Desktop/rt_exercises/rt_ws/src/second_assignment/msg/Speed.msg
-/root/Desktop/rt_exercises/rt_ws/devel/include/second_assignment/Speed.h: /opt/ros/noetic/share/gencpp/msg.h.template
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/root/Desktop/rt_exercises/rt_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating C++ code from second_assignment/Speed.msg"
-	cd /root/Desktop/rt_exercises/rt_ws/src/second_assignment && /root/Desktop/rt_exercises/rt_ws/build/catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /root/Desktop/rt_exercises/rt_ws/src/second_assignment/msg/Speed.msg -Isecond_assignment:/root/Desktop/rt_exercises/rt_ws/src/second_assignment/msg -Igeometry_msgs:/opt/ros/noetic/share/geometry_msgs/cmake/../msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -p second_assignment -o /root/Desktop/rt_exercises/rt_ws/devel/include/second_assignment -e /opt/ros/noetic/share/gencpp/cmake/..
 
 /root/Desktop/rt_exercises/rt_ws/devel/include/second_assignment/Service.h: /opt/ros/noetic/lib/gencpp/gen_cpp.py
 /root/Desktop/rt_exercises/rt_ws/devel/include/second_assignment/Service.h: /root/Desktop/rt_exercises/rt_ws/src/second_assignment/srv/Service.srv
 /root/Desktop/rt_exercises/rt_ws/devel/include/second_assignment/Service.h: /opt/ros/noetic/share/gencpp/msg.h.template
 /root/Desktop/rt_exercises/rt_ws/devel/include/second_assignment/Service.h: /opt/ros/noetic/share/gencpp/srv.h.template
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/root/Desktop/rt_exercises/rt_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Generating C++ code from second_assignment/Service.srv"
-	cd /root/Desktop/rt_exercises/rt_ws/src/second_assignment && /root/Desktop/rt_exercises/rt_ws/build/catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /root/Desktop/rt_exercises/rt_ws/src/second_assignment/srv/Service.srv -Isecond_assignment:/root/Desktop/rt_exercises/rt_ws/src/second_assignment/msg -Igeometry_msgs:/opt/ros/noetic/share/geometry_msgs/cmake/../msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -p second_assignment -o /root/Desktop/rt_exercises/rt_ws/devel/include/second_assignment -e /opt/ros/noetic/share/gencpp/cmake/..
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/root/Desktop/rt_exercises/rt_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating C++ code from second_assignment/Service.srv"
+	cd /root/Desktop/rt_exercises/rt_ws/src/second_assignment && /root/Desktop/rt_exercises/rt_ws/build/catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /root/Desktop/rt_exercises/rt_ws/src/second_assignment/srv/Service.srv -Igeometry_msgs:/opt/ros/noetic/share/geometry_msgs/cmake/../msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -p second_assignment -o /root/Desktop/rt_exercises/rt_ws/devel/include/second_assignment -e /opt/ros/noetic/share/gencpp/cmake/..
 
 second_assignment_generate_messages_cpp: second_assignment/CMakeFiles/second_assignment_generate_messages_cpp
-second_assignment_generate_messages_cpp: /root/Desktop/rt_exercises/rt_ws/devel/include/second_assignment/Speed.h
 second_assignment_generate_messages_cpp: /root/Desktop/rt_exercises/rt_ws/devel/include/second_assignment/Service.h
 second_assignment_generate_messages_cpp: second_assignment/CMakeFiles/second_assignment_generate_messages_cpp.dir/build.make
 

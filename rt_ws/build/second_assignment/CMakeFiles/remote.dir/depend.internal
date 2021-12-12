@@ -61,6 +61,7 @@ second_assignment/CMakeFiles/remote.dir/src/remote.cpp.o
  /opt/ros/noetic/include/ros/wall_timer_options.h
  /opt/ros/noetic/include/rosconsole/macros_generated.h
  /opt/ros/noetic/include/sensor_msgs/LaserScan.h
+ /opt/ros/noetic/include/std_msgs/Float32.h
  /opt/ros/noetic/include/std_msgs/Header.h
  /opt/ros/noetic/include/std_srvs/Empty.h
  /opt/ros/noetic/include/std_srvs/EmptyRequest.h
@@ -73,5 +74,4 @@ second_assignment/CMakeFiles/remote.dir/src/remote.cpp.o
  /root/Desktop/rt_exercises/rt_ws/devel/include/second_assignment/Service.h
  /root/Desktop/rt_exercises/rt_ws/devel/include/second_assignment/ServiceRequest.h
  /root/Desktop/rt_exercises/rt_ws/devel/include/second_assignment/ServiceResponse.h
- /root/Desktop/rt_exercises/rt_ws/devel/include/second_assignment/Speed.h
  /root/Desktop/rt_exercises/rt_ws/src/second_assignment/src/remote.cpp

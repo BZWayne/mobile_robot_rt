@@ -53,36 +53,27 @@ CMAKE_BINARY_DIR = /root/Desktop/rt_exercises/rt_ws/build
 # Include the progress variables for this target.
 include second_assignment/CMakeFiles/second_assignment_generate_messages_py.dir/progress.make
 
-second_assignment/CMakeFiles/second_assignment_generate_messages_py: /root/Desktop/rt_exercises/rt_ws/devel/lib/python3/dist-packages/second_assignment/msg/_Speed.py
 second_assignment/CMakeFiles/second_assignment_generate_messages_py: /root/Desktop/rt_exercises/rt_ws/devel/lib/python3/dist-packages/second_assignment/srv/_Service.py
 second_assignment/CMakeFiles/second_assignment_generate_messages_py: /root/Desktop/rt_exercises/rt_ws/devel/lib/python3/dist-packages/second_assignment/msg/__init__.py
 second_assignment/CMakeFiles/second_assignment_generate_messages_py: /root/Desktop/rt_exercises/rt_ws/devel/lib/python3/dist-packages/second_assignment/srv/__init__.py
 
 
-/root/Desktop/rt_exercises/rt_ws/devel/lib/python3/dist-packages/second_assignment/msg/_Speed.py: /opt/ros/noetic/lib/genpy/genmsg_py.py
-/root/Desktop/rt_exercises/rt_ws/devel/lib/python3/dist-packages/second_assignment/msg/_Speed.py: /root/Desktop/rt_exercises/rt_ws/src/second_assignment/msg/Speed.msg
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/root/Desktop/rt_exercises/rt_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating Python from MSG second_assignment/Speed"
-	cd /root/Desktop/rt_exercises/rt_ws/build/second_assignment && ../catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py /root/Desktop/rt_exercises/rt_ws/src/second_assignment/msg/Speed.msg -Isecond_assignment:/root/Desktop/rt_exercises/rt_ws/src/second_assignment/msg -Igeometry_msgs:/opt/ros/noetic/share/geometry_msgs/cmake/../msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -p second_assignment -o /root/Desktop/rt_exercises/rt_ws/devel/lib/python3/dist-packages/second_assignment/msg
-
 /root/Desktop/rt_exercises/rt_ws/devel/lib/python3/dist-packages/second_assignment/srv/_Service.py: /opt/ros/noetic/lib/genpy/gensrv_py.py
 /root/Desktop/rt_exercises/rt_ws/devel/lib/python3/dist-packages/second_assignment/srv/_Service.py: /root/Desktop/rt_exercises/rt_ws/src/second_assignment/srv/Service.srv
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/root/Desktop/rt_exercises/rt_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Generating Python code from SRV second_assignment/Service"
-	cd /root/Desktop/rt_exercises/rt_ws/build/second_assignment && ../catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/genpy/cmake/../../../lib/genpy/gensrv_py.py /root/Desktop/rt_exercises/rt_ws/src/second_assignment/srv/Service.srv -Isecond_assignment:/root/Desktop/rt_exercises/rt_ws/src/second_assignment/msg -Igeometry_msgs:/opt/ros/noetic/share/geometry_msgs/cmake/../msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -p second_assignment -o /root/Desktop/rt_exercises/rt_ws/devel/lib/python3/dist-packages/second_assignment/srv
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/root/Desktop/rt_exercises/rt_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating Python code from SRV second_assignment/Service"
+	cd /root/Desktop/rt_exercises/rt_ws/build/second_assignment && ../catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/genpy/cmake/../../../lib/genpy/gensrv_py.py /root/Desktop/rt_exercises/rt_ws/src/second_assignment/srv/Service.srv -Igeometry_msgs:/opt/ros/noetic/share/geometry_msgs/cmake/../msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -p second_assignment -o /root/Desktop/rt_exercises/rt_ws/devel/lib/python3/dist-packages/second_assignment/srv
 
 /root/Desktop/rt_exercises/rt_ws/devel/lib/python3/dist-packages/second_assignment/msg/__init__.py: /opt/ros/noetic/lib/genpy/genmsg_py.py
-/root/Desktop/rt_exercises/rt_ws/devel/lib/python3/dist-packages/second_assignment/msg/__init__.py: /root/Desktop/rt_exercises/rt_ws/devel/lib/python3/dist-packages/second_assignment/msg/_Speed.py
 /root/Desktop/rt_exercises/rt_ws/devel/lib/python3/dist-packages/second_assignment/msg/__init__.py: /root/Desktop/rt_exercises/rt_ws/devel/lib/python3/dist-packages/second_assignment/srv/_Service.py
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/root/Desktop/rt_exercises/rt_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Generating Python msg __init__.py for second_assignment"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/root/Desktop/rt_exercises/rt_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Generating Python msg __init__.py for second_assignment"
 	cd /root/Desktop/rt_exercises/rt_ws/build/second_assignment && ../catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py -o /root/Desktop/rt_exercises/rt_ws/devel/lib/python3/dist-packages/second_assignment/msg --initpy
 
 /root/Desktop/rt_exercises/rt_ws/devel/lib/python3/dist-packages/second_assignment/srv/__init__.py: /opt/ros/noetic/lib/genpy/genmsg_py.py
-/root/Desktop/rt_exercises/rt_ws/devel/lib/python3/dist-packages/second_assignment/srv/__init__.py: /root/Desktop/rt_exercises/rt_ws/devel/lib/python3/dist-packages/second_assignment/msg/_Speed.py
 /root/Desktop/rt_exercises/rt_ws/devel/lib/python3/dist-packages/second_assignment/srv/__init__.py: /root/Desktop/rt_exercises/rt_ws/devel/lib/python3/dist-packages/second_assignment/srv/_Service.py
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/root/Desktop/rt_exercises/rt_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Generating Python srv __init__.py for second_assignment"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/root/Desktop/rt_exercises/rt_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Generating Python srv __init__.py for second_assignment"
 	cd /root/Desktop/rt_exercises/rt_ws/build/second_assignment && ../catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py -o /root/Desktop/rt_exercises/rt_ws/devel/lib/python3/dist-packages/second_assignment/srv --initpy
 
 second_assignment_generate_messages_py: second_assignment/CMakeFiles/second_assignment_generate_messages_py
-second_assignment_generate_messages_py: /root/Desktop/rt_exercises/rt_ws/devel/lib/python3/dist-packages/second_assignment/msg/_Speed.py
 second_assignment_generate_messages_py: /root/Desktop/rt_exercises/rt_ws/devel/lib/python3/dist-packages/second_assignment/srv/_Service.py
 second_assignment_generate_messages_py: /root/Desktop/rt_exercises/rt_ws/devel/lib/python3/dist-packages/second_assignment/msg/__init__.py
 second_assignment_generate_messages_py: /root/Desktop/rt_exercises/rt_ws/devel/lib/python3/dist-packages/second_assignment/srv/__init__.py

@@ -1,8 +1,8 @@
 # generated from genmsg/cmake/pkg-genmsg.cmake.em
 
-message(STATUS "second_assignment: 1 messages, 1 services")
+message(STATUS "second_assignment: 0 messages, 1 services")
 
-set(MSG_I_FLAGS "-Isecond_assignment:/root/Desktop/rt_exercises/rt_ws/src/second_assignment/msg;-Igeometry_msgs:/opt/ros/noetic/share/geometry_msgs/cmake/../msg;-Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg")
+set(MSG_I_FLAGS "-Igeometry_msgs:/opt/ros/noetic/share/geometry_msgs/cmake/../msg;-Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg")
 
 # Find all generators
 find_package(gencpp REQUIRED)
@@ -17,11 +17,6 @@ add_custom_target(second_assignment_generate_messages ALL)
 
 
 
-get_filename_component(_filename "/root/Desktop/rt_exercises/rt_ws/src/second_assignment/msg/Speed.msg" NAME_WE)
-add_custom_target(_second_assignment_generate_messages_check_deps_${_filename}
-  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "second_assignment" "/root/Desktop/rt_exercises/rt_ws/src/second_assignment/msg/Speed.msg" ""
-)
-
 get_filename_component(_filename "/root/Desktop/rt_exercises/rt_ws/src/second_assignment/srv/Service.srv" NAME_WE)
 add_custom_target(_second_assignment_generate_messages_check_deps_${_filename}
   COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "second_assignment" "/root/Desktop/rt_exercises/rt_ws/src/second_assignment/srv/Service.srv" ""
@@ -33,12 +28,6 @@ add_custom_target(_second_assignment_generate_messages_check_deps_${_filename}
 
 ### Section generating for lang: gencpp
 ### Generating Messages
-_generate_msg_cpp(second_assignment
-  "/root/Desktop/rt_exercises/rt_ws/src/second_assignment/msg/Speed.msg"
-  "${MSG_I_FLAGS}"
-  ""
-  ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/second_assignment
-)
 
 ### Generating Services
 _generate_srv_cpp(second_assignment
@@ -60,8 +49,6 @@ add_custom_target(second_assignment_generate_messages_cpp
 add_dependencies(second_assignment_generate_messages second_assignment_generate_messages_cpp)
 
 # add dependencies to all check dependencies targets
-get_filename_component(_filename "/root/Desktop/rt_exercises/rt_ws/src/second_assignment/msg/Speed.msg" NAME_WE)
-add_dependencies(second_assignment_generate_messages_cpp _second_assignment_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/root/Desktop/rt_exercises/rt_ws/src/second_assignment/srv/Service.srv" NAME_WE)
 add_dependencies(second_assignment_generate_messages_cpp _second_assignment_generate_messages_check_deps_${_filename})
 
@@ -74,12 +61,6 @@ list(APPEND ${PROJECT_NAME}_EXPORTED_TARGETS second_assignment_generate_messages
 
 ### Section generating for lang: geneus
 ### Generating Messages
-_generate_msg_eus(second_assignment
-  "/root/Desktop/rt_exercises/rt_ws/src/second_assignment/msg/Speed.msg"
-  "${MSG_I_FLAGS}"
-  ""
-  ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/second_assignment
-)
 
 ### Generating Services
 _generate_srv_eus(second_assignment
@@ -101,8 +82,6 @@ add_custom_target(second_assignment_generate_messages_eus
 add_dependencies(second_assignment_generate_messages second_assignment_generate_messages_eus)
 
 # add dependencies to all check dependencies targets
-get_filename_component(_filename "/root/Desktop/rt_exercises/rt_ws/src/second_assignment/msg/Speed.msg" NAME_WE)
-add_dependencies(second_assignment_generate_messages_eus _second_assignment_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/root/Desktop/rt_exercises/rt_ws/src/second_assignment/srv/Service.srv" NAME_WE)
 add_dependencies(second_assignment_generate_messages_eus _second_assignment_generate_messages_check_deps_${_filename})
 
@@ -115,12 +94,6 @@ list(APPEND ${PROJECT_NAME}_EXPORTED_TARGETS second_assignment_generate_messages
 
 ### Section generating for lang: genlisp
 ### Generating Messages
-_generate_msg_lisp(second_assignment
-  "/root/Desktop/rt_exercises/rt_ws/src/second_assignment/msg/Speed.msg"
-  "${MSG_I_FLAGS}"
-  ""
-  ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/second_assignment
-)
 
 ### Generating Services
 _generate_srv_lisp(second_assignment
@@ -142,8 +115,6 @@ add_custom_target(second_assignment_generate_messages_lisp
 add_dependencies(second_assignment_generate_messages second_assignment_generate_messages_lisp)
 
 # add dependencies to all check dependencies targets
-get_filename_component(_filename "/root/Desktop/rt_exercises/rt_ws/src/second_assignment/msg/Speed.msg" NAME_WE)
-add_dependencies(second_assignment_generate_messages_lisp _second_assignment_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/root/Desktop/rt_exercises/rt_ws/src/second_assignment/srv/Service.srv" NAME_WE)
 add_dependencies(second_assignment_generate_messages_lisp _second_assignment_generate_messages_check_deps_${_filename})
 
@@ -156,12 +127,6 @@ list(APPEND ${PROJECT_NAME}_EXPORTED_TARGETS second_assignment_generate_messages
 
 ### Section generating for lang: gennodejs
 ### Generating Messages
-_generate_msg_nodejs(second_assignment
-  "/root/Desktop/rt_exercises/rt_ws/src/second_assignment/msg/Speed.msg"
-  "${MSG_I_FLAGS}"
-  ""
-  ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/second_assignment
-)
 
 ### Generating Services
 _generate_srv_nodejs(second_assignment
@@ -183,8 +148,6 @@ add_custom_target(second_assignment_generate_messages_nodejs
 add_dependencies(second_assignment_generate_messages second_assignment_generate_messages_nodejs)
 
 # add dependencies to all check dependencies targets
-get_filename_component(_filename "/root/Desktop/rt_exercises/rt_ws/src/second_assignment/msg/Speed.msg" NAME_WE)
-add_dependencies(second_assignment_generate_messages_nodejs _second_assignment_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/root/Desktop/rt_exercises/rt_ws/src/second_assignment/srv/Service.srv" NAME_WE)
 add_dependencies(second_assignment_generate_messages_nodejs _second_assignment_generate_messages_check_deps_${_filename})
 
@@ -197,12 +160,6 @@ list(APPEND ${PROJECT_NAME}_EXPORTED_TARGETS second_assignment_generate_messages
 
 ### Section generating for lang: genpy
 ### Generating Messages
-_generate_msg_py(second_assignment
-  "/root/Desktop/rt_exercises/rt_ws/src/second_assignment/msg/Speed.msg"
-  "${MSG_I_FLAGS}"
-  ""
-  ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/second_assignment
-)
 
 ### Generating Services
 _generate_srv_py(second_assignment
@@ -224,8 +181,6 @@ add_custom_target(second_assignment_generate_messages_py
 add_dependencies(second_assignment_generate_messages second_assignment_generate_messages_py)
 
 # add dependencies to all check dependencies targets
-get_filename_component(_filename "/root/Desktop/rt_exercises/rt_ws/src/second_assignment/msg/Speed.msg" NAME_WE)
-add_dependencies(second_assignment_generate_messages_py _second_assignment_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/root/Desktop/rt_exercises/rt_ws/src/second_assignment/srv/Service.srv" NAME_WE)
 add_dependencies(second_assignment_generate_messages_py _second_assignment_generate_messages_check_deps_${_filename})
 

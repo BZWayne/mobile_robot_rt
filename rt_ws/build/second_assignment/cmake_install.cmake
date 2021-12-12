@@ -38,10 +38,6 @@ if(NOT DEFINED CMAKE_CROSSCOMPILING)
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/second_assignment/msg" TYPE FILE FILES "/root/Desktop/rt_exercises/rt_ws/src/second_assignment/msg/Speed.msg")
-endif()
-
-if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/second_assignment/srv" TYPE FILE FILES "/root/Desktop/rt_exercises/rt_ws/src/second_assignment/srv/Service.srv")
 endif()
 

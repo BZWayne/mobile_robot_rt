@@ -11,7 +11,12 @@
     :reader setVal
     :initarg :setVal
     :type cl:integer
-    :initform 0))
+    :initform 0)
+   (acSpeed
+    :reader acSpeed
+    :initarg :acSpeed
+    :type cl:float
+    :initform 0.0))
 )
 
 (cl:defclass Service-request (<Service-request>)
@@ -26,13 +31,29 @@
 (cl:defmethod setVal-val ((m <Service-request>))
   (roslisp-msg-protocol:msg-deprecation-warning "Using old-style slot reader second_assignment-srv:setVal-val is deprecated.  Use second_assignment-srv:setVal instead.")
   (setVal m))
+
+(cl:ensure-generic-function 'acSpeed-val :lambda-list '(m))
+(cl:defmethod acSpeed-val ((m <Service-request>))
+  (roslisp-msg-protocol:msg-deprecation-warning "Using old-style slot reader second_assignment-srv:acSpeed-val is deprecated.  Use second_assignment-srv:acSpeed instead.")
+  (acSpeed m))
 (cl:defmethod roslisp-msg-protocol:serialize ((msg <Service-request>) ostream)
   "Serializes a message object of type '<Service-request>"
   (cl:write-byte (cl:ldb (cl:byte 8 0) (cl:slot-value msg 'setVal)) ostream)
+  (cl:let ((bits (roslisp-utils:encode-single-float-bits (cl:slot-value msg 'acSpeed))))
+    (cl:write-byte (cl:ldb (cl:byte 8 0) bits) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 8) bits) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 16) bits) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 24) bits) ostream))
 )
 (cl:defmethod roslisp-msg-protocol:deserialize ((msg <Service-request>) istream)
   "Deserializes a message object of type '<Service-request>"
     (cl:setf (cl:ldb (cl:byte 8 0) (cl:slot-value msg 'setVal)) (cl:read-byte istream))
+    (cl:let ((bits 0))
+      (cl:setf (cl:ldb (cl:byte 8 0) bits) (cl:read-byte istream))
+      (cl:setf (cl:ldb (cl:byte 8 8) bits) (cl:read-byte istream))
+      (cl:setf (cl:ldb (cl:byte 8 16) bits) (cl:read-byte istream))
+      (cl:setf (cl:ldb (cl:byte 8 24) bits) (cl:read-byte istream))
+    (cl:setf (cl:slot-value msg 'acSpeed) (roslisp-utils:decode-single-float-bits bits)))
   msg
 )
 (cl:defmethod roslisp-msg-protocol:ros-datatype ((msg (cl:eql '<Service-request>)))
@@ -43,24 +64,26 @@
   "second_assignment/ServiceRequest")
 (cl:defmethod roslisp-msg-protocol:md5sum ((type (cl:eql '<Service-request>)))
   "Returns md5sum for a message object of type '<Service-request>"
-  "4f1064e684dd3d6da99d55dc37eb289e")
+  "8779e7bdb2387b37c12a283a613e834c")
 (cl:defmethod roslisp-msg-protocol:md5sum ((type (cl:eql 'Service-request)))
   "Returns md5sum for a message object of type 'Service-request"
-  "4f1064e684dd3d6da99d55dc37eb289e")
+  "8779e7bdb2387b37c12a283a613e834c")
 (cl:defmethod roslisp-msg-protocol:message-definition ((type (cl:eql '<Service-request>)))
   "Returns full string definition for message of type '<Service-request>"
-  (cl:format cl:nil "char setVal~%~%~%"))
+  (cl:format cl:nil "char setVal~%float32 acSpeed~%~%~%"))
 (cl:defmethod roslisp-msg-protocol:message-definition ((type (cl:eql 'Service-request)))
   "Returns full string definition for message of type 'Service-request"
-  (cl:format cl:nil "char setVal~%~%~%"))
+  (cl:format cl:nil "char setVal~%float32 acSpeed~%~%~%"))
 (cl:defmethod roslisp-msg-protocol:serialization-length ((msg <Service-request>))
   (cl:+ 0
      1
+     4
 ))
 (cl:defmethod roslisp-msg-protocol:ros-message-to-list ((msg <Service-request>))
   "Converts a ROS message object to a list"
   (cl:list 'Service-request
     (cl:cons ':setVal (setVal msg))
+    (cl:cons ':acSpeed (acSpeed msg))
 ))
 ;//! \htmlinclude Service-response.msg.html
 
@@ -110,10 +133,10 @@
   "second_assignment/ServiceResponse")
 (cl:defmethod roslisp-msg-protocol:md5sum ((type (cl:eql '<Service-response>)))
   "Returns md5sum for a message object of type '<Service-response>"
-  "4f1064e684dd3d6da99d55dc37eb289e")
+  "8779e7bdb2387b37c12a283a613e834c")
 (cl:defmethod roslisp-msg-protocol:md5sum ((type (cl:eql 'Service-response)))
   "Returns md5sum for a message object of type 'Service-response"
-  "4f1064e684dd3d6da99d55dc37eb289e")
+  "8779e7bdb2387b37c12a283a613e834c")
 (cl:defmethod roslisp-msg-protocol:message-definition ((type (cl:eql '<Service-response>)))
   "Returns full string definition for message of type '<Service-response>"
   (cl:format cl:nil "float32 getVal~%~%~%~%"))

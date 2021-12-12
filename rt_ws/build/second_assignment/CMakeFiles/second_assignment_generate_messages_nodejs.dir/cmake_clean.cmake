@@ -1,5 +1,4 @@
 file(REMOVE_RECURSE
-  "/root/Desktop/rt_exercises/rt_ws/devel/share/gennodejs/ros/second_assignment/msg/Speed.js"
   "/root/Desktop/rt_exercises/rt_ws/devel/share/gennodejs/ros/second_assignment/srv/Service.js"
   "CMakeFiles/second_assignment_generate_messages_nodejs"
 )

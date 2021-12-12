@@ -40,7 +40,7 @@ template<>
 struct MD5Sum< ::second_assignment::Service > {
   static const char* value()
   {
-    return "4f1064e684dd3d6da99d55dc37eb289e";
+    return "8779e7bdb2387b37c12a283a613e834c";
   }
 
   static const char* value(const ::second_assignment::Service&) { return value(); }

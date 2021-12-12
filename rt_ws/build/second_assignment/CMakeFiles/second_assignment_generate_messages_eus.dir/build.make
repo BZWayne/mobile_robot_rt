@@ -53,27 +53,20 @@ CMAKE_BINARY_DIR = /root/Desktop/rt_exercises/rt_ws/build
 # Include the progress variables for this target.
 include second_assignment/CMakeFiles/second_assignment_generate_messages_eus.dir/progress.make
 
-second_assignment/CMakeFiles/second_assignment_generate_messages_eus: /root/Desktop/rt_exercises/rt_ws/devel/share/roseus/ros/second_assignment/msg/Speed.l
 second_assignment/CMakeFiles/second_assignment_generate_messages_eus: /root/Desktop/rt_exercises/rt_ws/devel/share/roseus/ros/second_assignment/srv/Service.l
 second_assignment/CMakeFiles/second_assignment_generate_messages_eus: /root/Desktop/rt_exercises/rt_ws/devel/share/roseus/ros/second_assignment/manifest.l
 
 
-/root/Desktop/rt_exercises/rt_ws/devel/share/roseus/ros/second_assignment/msg/Speed.l: /opt/ros/noetic/lib/geneus/gen_eus.py
-/root/Desktop/rt_exercises/rt_ws/devel/share/roseus/ros/second_assignment/msg/Speed.l: /root/Desktop/rt_exercises/rt_ws/src/second_assignment/msg/Speed.msg
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/root/Desktop/rt_exercises/rt_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating EusLisp code from second_assignment/Speed.msg"
-	cd /root/Desktop/rt_exercises/rt_ws/build/second_assignment && ../catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/geneus/cmake/../../../lib/geneus/gen_eus.py /root/Desktop/rt_exercises/rt_ws/src/second_assignment/msg/Speed.msg -Isecond_assignment:/root/Desktop/rt_exercises/rt_ws/src/second_assignment/msg -Igeometry_msgs:/opt/ros/noetic/share/geometry_msgs/cmake/../msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -p second_assignment -o /root/Desktop/rt_exercises/rt_ws/devel/share/roseus/ros/second_assignment/msg
-
 /root/Desktop/rt_exercises/rt_ws/devel/share/roseus/ros/second_assignment/srv/Service.l: /opt/ros/noetic/lib/geneus/gen_eus.py
 /root/Desktop/rt_exercises/rt_ws/devel/share/roseus/ros/second_assignment/srv/Service.l: /root/Desktop/rt_exercises/rt_ws/src/second_assignment/srv/Service.srv
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/root/Desktop/rt_exercises/rt_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Generating EusLisp code from second_assignment/Service.srv"
-	cd /root/Desktop/rt_exercises/rt_ws/build/second_assignment && ../catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/geneus/cmake/../../../lib/geneus/gen_eus.py /root/Desktop/rt_exercises/rt_ws/src/second_assignment/srv/Service.srv -Isecond_assignment:/root/Desktop/rt_exercises/rt_ws/src/second_assignment/msg -Igeometry_msgs:/opt/ros/noetic/share/geometry_msgs/cmake/../msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -p second_assignment -o /root/Desktop/rt_exercises/rt_ws/devel/share/roseus/ros/second_assignment/srv
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/root/Desktop/rt_exercises/rt_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating EusLisp code from second_assignment/Service.srv"
+	cd /root/Desktop/rt_exercises/rt_ws/build/second_assignment && ../catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/geneus/cmake/../../../lib/geneus/gen_eus.py /root/Desktop/rt_exercises/rt_ws/src/second_assignment/srv/Service.srv -Igeometry_msgs:/opt/ros/noetic/share/geometry_msgs/cmake/../msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -p second_assignment -o /root/Desktop/rt_exercises/rt_ws/devel/share/roseus/ros/second_assignment/srv
 
 /root/Desktop/rt_exercises/rt_ws/devel/share/roseus/ros/second_assignment/manifest.l: /opt/ros/noetic/lib/geneus/gen_eus.py
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/root/Desktop/rt_exercises/rt_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Generating EusLisp manifest code for second_assignment"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/root/Desktop/rt_exercises/rt_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Generating EusLisp manifest code for second_assignment"
 	cd /root/Desktop/rt_exercises/rt_ws/build/second_assignment && ../catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/geneus/cmake/../../../lib/geneus/gen_eus.py -m -o /root/Desktop/rt_exercises/rt_ws/devel/share/roseus/ros/second_assignment second_assignment geometry_msgs std_msgs
 
 second_assignment_generate_messages_eus: second_assignment/CMakeFiles/second_assignment_generate_messages_eus
-second_assignment_generate_messages_eus: /root/Desktop/rt_exercises/rt_ws/devel/share/roseus/ros/second_assignment/msg/Speed.l
 second_assignment_generate_messages_eus: /root/Desktop/rt_exercises/rt_ws/devel/share/roseus/ros/second_assignment/srv/Service.l
 second_assignment_generate_messages_eus: /root/Desktop/rt_exercises/rt_ws/devel/share/roseus/ros/second_assignment/manifest.l
 second_assignment_generate_messages_eus: second_assignment/CMakeFiles/second_assignment_generate_messages_eus.dir/build.make

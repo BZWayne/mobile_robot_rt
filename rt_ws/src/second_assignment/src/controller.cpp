@@ -3,7 +3,7 @@
 #include "sensor_msgs/LaserScan.h"
 #include "geometry_msgs/Twist.h"
 #include "second_assignment/Service.h"
-#include "second_assignment/Speed.h"
+#include "std_msgs/Float32.h"
 
 ros::Publisher pub;
 geometry_msgs::Twist vel;
@@ -54,8 +54,8 @@ void Robot(const sensor_msgs::LaserScan::ConstPtr& msg){
 }
 
 
-void changeSpeed(const second_assignment::Speed::ConstPtr& aVal){
-    changeAcc = aVal->acSpeed;
+void changeSpeed(const std_msgs::Float32::ConstPtr& aVal){
+    ROS_INFO("I am changing the speed: [%f]", aVal->data);
 }
 
 int main (int argc, char **argv)

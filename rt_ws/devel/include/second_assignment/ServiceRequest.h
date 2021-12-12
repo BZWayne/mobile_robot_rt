@@ -24,10 +24,12 @@ struct ServiceRequest_
   typedef ServiceRequest_<ContainerAllocator> Type;
 
   ServiceRequest_()
-    : setVal(0)  {
+    : setVal(0)
+    , acSpeed(0.0)  {
     }
   ServiceRequest_(const ContainerAllocator& _alloc)
-    : setVal(0)  {
+    : setVal(0)
+    , acSpeed(0.0)  {
   (void)_alloc;
     }
 
@@ -35,6 +37,9 @@ struct ServiceRequest_
 
    typedef uint8_t _setVal_type;
   _setVal_type setVal;
+
+   typedef float _acSpeed_type;
+  _acSpeed_type acSpeed;
 
 
 
@@ -65,7 +70,8 @@ return s;
 template<typename ContainerAllocator1, typename ContainerAllocator2>
 bool operator==(const ::second_assignment::ServiceRequest_<ContainerAllocator1> & lhs, const ::second_assignment::ServiceRequest_<ContainerAllocator2> & rhs)
 {
-  return lhs.setVal == rhs.setVal;
+  return lhs.setVal == rhs.setVal &&
+    lhs.acSpeed == rhs.acSpeed;
 }
 
 template<typename ContainerAllocator1, typename ContainerAllocator2>
@@ -122,12 +128,12 @@ struct MD5Sum< ::second_assignment::ServiceRequest_<ContainerAllocator> >
 {
   static const char* value()
   {
-    return "700f3d0ef2d3afaa15c71d548b552f53";
+    return "e2a538ab618e9c953ca027f7639a85e4";
   }
 
   static const char* value(const ::second_assignment::ServiceRequest_<ContainerAllocator>&) { return value(); }
-  static const uint64_t static_value1 = 0x700f3d0ef2d3afaaULL;
-  static const uint64_t static_value2 = 0x15c71d548b552f53ULL;
+  static const uint64_t static_value1 = 0xe2a538ab618e9c95ULL;
+  static const uint64_t static_value2 = 0x3ca027f7639a85e4ULL;
 };
 
 template<class ContainerAllocator>
@@ -147,6 +153,7 @@ struct Definition< ::second_assignment::ServiceRequest_<ContainerAllocator> >
   static const char* value()
   {
     return "char setVal\n"
+"float32 acSpeed\n"
 ;
   }
 
@@ -166,6 +173,7 @@ namespace serialization
     template<typename Stream, typename T> inline static void allInOne(Stream& stream, T m)
     {
       stream.next(m.setVal);
+      stream.next(m.acSpeed);
     }
 
     ROS_DECLARE_ALLINONE_SERIALIZER
@@ -186,6 +194,8 @@ struct Printer< ::second_assignment::ServiceRequest_<ContainerAllocator> >
   {
     s << indent << "setVal: ";
     Printer<uint8_t>::stream(s, indent + "  ", v.setVal);
+    s << indent << "acSpeed: ";
+    Printer<float>::stream(s, indent + "  ", v.acSpeed);
   }
 };
 

@@ -1,9 +1,9 @@
 #include "ros/ros.h"
 #include <ros/console.h>
 #include "sensor_msgs/LaserScan.h"
+#include "std_msgs/Float32.h"
 #include "geometry_msgs/Twist.h"
 #include "second_assignment/Service.h"
-#include "second_assignment/Speed.h"
 #include "geometry_msgs/Twist.h"
 #include "std_srvs/Empty.h"
 #include "turtlesim/Spawn.h"
