@@ -1,6 +1,9 @@
 # Here are the exercises of RT course
 ## About this course
 
+#### READ ME of Assignment I is in folder `/robot_simulation`
+#### READ ME of Assignment II is in folder `/rt_ws`
+
 Course Instructor: [Carmine Tommaso Recchiuto](https://github.com/CarmineD8)
 
 This course is oriented to learn Robotics Tools such as Python, C++, ROS/ROS2. As every course, it considers midterm assignments:
