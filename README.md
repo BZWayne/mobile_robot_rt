@@ -43,4 +43,4 @@ Hint: divide the ranges vector into subsections, and take the minimum value of e
 information about the closest obstacles. 
 
 #### Results
-The video result of the first assignment is uploaded to my YouTube channel: 
+The video result of the first assignment is uploaded to my YouTube channel: https://youtu.be/pkgA9I5c9DM
