@@ -90,7 +90,6 @@ This function controls the accelaration of robot to increase or decrease the spe
 ```
 	changeAcc = aVal->data;
     ROS_INFO("I am changing the speed: [%f]", changeAcc);
-}
 ```
 
 ### REMOTE script
