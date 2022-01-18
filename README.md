@@ -5,3 +5,4 @@ Course Instructor: [Carmine Tommaso Recchiuto](https://github.com/CarmineD8)
 
 #### READ ME of Assignment I is in folder `/robot_simulation_python`
 #### READ ME of Assignment II is in folder `/rt_ws`
+<!-- #### READ ME of Assignment III is in folder `/final_ws` -->
