@@ -12,6 +12,14 @@ from actionlib_msgs.msg import GoalStatusArray
 publisher_movebase = rospy.Publisher("move_base/goal", MoveBaseActionGoal, queue_size = 50)
 publisher_cancel = rospy.Publisher("move_base/cancel", GoalID, queue_size = 50)
 
+## check if it is a number
+def is_number(s):
+    try:
+        float(s)
+        return True
+    except ValueError:
+        return False
+
 def option_one():
     # message topics using /move_base 
     move_base_msg = MoveBaseActionGoal()
@@ -26,13 +34,22 @@ def option_one():
         ## renew the system
         os.system('clear')
         print("Autonomous drive is chosen")
-        x_goal = float(input("Insert x coordinate: "))
-        y_goal = float(input("Insert y coordinate: "))
-        print("The coordinates were given: x = %2.2f and y = %2.2f" % (x_goal, y_goal))
+        x = float(input("Insert x coordinate: "))
+
+        ## check and repeat until x is number
+        check_num_x = is_number(x)
+        while check_num_x not True:
+            x = float(input("Wrong, input. Insert x coordinate: "))
+
+        ## same procedure with y
+        y = float(input("Insert y coordinate: "))
+        check_num_y = is_number(y)
+        while check_num_y not True:
+            x = float(input("Wrong, input. Insert x coordinate: "))
 
         ## provide and publish move_base with (x,y) values
-        move_base_msg.goal.target_pose.pose.position.x = x_goal
-        move_base_msg.goal.target_pose.pose.position.y = y_goal
+        move_base_msg.goal.target_pose.pose.position.x = x
+        move_base_msg.goal.target_pose.pose.position.y = y
         publisher_movebase.publish(move_base_msg) 
 
         ## provide basic needs and start moving
@@ -61,7 +78,7 @@ def option_one():
             feedback_robot = rospy.wait_for_message("move_base/feedback", MoveBaseActionFeedback)
             dist_goal_x = feedback_robot.feedback.base_position.pose.position.x 
             dist_goal_y = feedback_robot.feedback.base_position.pose.position.y 
-            dis_goal = ((x_goal - dist_goal_x)**2 + (y_goal - dist_goal_y)**2)**0.5 
+            dis_goal = ((x - dist_goal_x)**2 + (y - dist_goal_y)**2)**0.5 
             time_finish = rospy.Time.now().to_sec()
 
             ## print position and time
