@@ -12,7 +12,6 @@ Installing and building
 
 ```
 $ git clone https://github.com/BZWayne/rt_exercises.git
-$ cd /rt_exercises/rt_ws/
 $ cd catkin_make
 ```
 
