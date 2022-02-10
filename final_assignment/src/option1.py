@@ -13,8 +13,7 @@ publisher_movebase = rospy.Publisher("move_base/goal", MoveBaseActionGoal, queue
 publisher_cancel = rospy.Publisher("move_base/cancel", GoalID, queue_size = 50)
 
 ## check if it is a number
-def is_number_tryexcept(s):
-    # Returns True if string is a number (both positive or negative)
+def check_num(s):
     try:
         float(s)
         return True
@@ -38,13 +37,13 @@ def option_one():
 
         ## check and repeat until x is number
         goal_x = input("Insert x coordinate: ")
-        while is_number_tryexcept(goal_x) is not True:
+        while check_num(goal_x) is not True:
             goal_x = input("Wrong input. Insert x coordinate: ")
         goal_x = float(goal_x)
 
         ## same procedure with y
         goal_y = input("Insert y coordinate: ")
-        while is_number_tryexcept(goal_y) is not True:
+        while check_num(goal_y) is not True:
             goal_y = input("Wrong input. Insert y coordinate: ")
         goal_y = float(goal_y)
 
