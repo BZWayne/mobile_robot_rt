@@ -38,14 +38,14 @@ def option_one():
 
         ## check and repeat until x is number
         check_num_x = is_number(x)
-        while check_num_x not True:
-            x = float(input("Wrong, input. Insert x coordinate: "))
+        while not check_num_x:
+            x = float(input("Wrong input. Insert x coordinate: "))
 
         ## same procedure with y
         y = float(input("Insert y coordinate: "))
         check_num_y = is_number(y)
-        while check_num_y not True:
-            x = float(input("Wrong, input. Insert x coordinate: "))
+        while not check_num_y:
+            x = float(input("Wrong input. Insert x coordinate: "))
 
         ## provide and publish move_base with (x,y) values
         move_base_msg.goal.target_pose.pose.position.x = x
