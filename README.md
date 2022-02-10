@@ -7,5 +7,6 @@ Course Instructor: [Carmine Tommaso Recchiuto](https://github.com/CarmineD8)
 #### READ ME of Assignment II is in folder `/second_assignment`
 #### READ ME of Assignment III is in folder `/final_assignment`
 
-To get install just git_clone and put in your workspace
+For usage, just git_clone and put in your catkin workspace
+
 
