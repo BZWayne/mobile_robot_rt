@@ -51,7 +51,7 @@ In particular, the information about the distance of the obstacles is in the ran
 ----------------------
 ### Flowchart
 
-![alt text](https://github.com/BZWayne/rt_exercises/blob/main/images/flowchart.png)
+![alt text](https://github.com/BZWayne/rt_exercises/blob/main/images/flowchart_ass2.png)
 
 ### CONTROLLER script
 #### Measure Distance Function
