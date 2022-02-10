@@ -58,7 +58,7 @@ left/right
 ----------------------
 ### Flowchart
 
-![alt text](https://github.com/BZWayne/rt_exercises/blob/main/images/flowchart.png)
+![alt text](https://github.com/BZWayne/rt_exercises/blob/main/images/flowchart_ass3.png)
 
 ### Option One script
 This is autonomous driving mode and here we are providing (x,y) coordinates
