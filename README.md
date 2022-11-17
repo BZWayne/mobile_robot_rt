@@ -1,7 +1,8 @@
 # Here are the exercises of RT course
 ## About this course
 
-Course Instructor: [Carmine Tommaso Recchiuto](https://github.com/CarmineD8)
+*Course Instructor*: [Carmine Tommaso Recchiuto](https://github.com/CarmineD8)
+**Author**: *Bauyrzhan Zhakanov*, [bauyrzhan.zhakanov@gmail.com](bauyrzhan.zhakanov@gmail.com)
 
 #### READ ME of Assignment I is in folder `/robot_simulation_python`
 #### READ ME of Assignment II is in folder `/second_assignment`
